@@ -1,0 +1,288 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 6, ../scss/_grid-mixins.scss */
+[class^='_container-'] {
+  border: 1px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+/* line 16, ../scss/_grid-mixins.scss */
+[class^='_container-']._wrap {
+  flex-flow: row wrap;
+}
+/* line 20, ../scss/_grid-mixins.scss */
+[class^='_container-']._align-top {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+/* line 25, ../scss/_grid-mixins.scss */
+[class^='_container-']._align-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/* line 30, ../scss/_grid-mixins.scss */
+[class^='_container-']._align-bottom {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+/* line 36, ../scss/_grid-mixins.scss */
+[class^='_container-']._pull-left {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+/* line 41, ../scss/_grid-mixins.scss */
+[class^='_container-']._pull-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+/* line 46, ../scss/_grid-mixins.scss */
+[class^='_container-']._pull-right {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+/* line 52, ../scss/_grid-mixins.scss */
+[class^='_container-']._collapse {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+/* line 58, ../scss/_grid-mixins.scss */
+[class^='_container-']._nowrap {
+  flex-flow: row nowrap;
+}
+/* line 64, ../scss/_grid-mixins.scss */
+[class^='_container-'] ._box._align-top {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+/* line 68, ../scss/_grid-mixins.scss */
+[class^='_container-'] ._box._align-center {
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+}
+/* line 73, ../scss/_grid-mixins.scss */
+[class^='_container-'] ._box._align-bottom {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+/* line 83, ../scss/_grid-mixins.scss */
+._container-1 ._box {
+  width: 96%;
+}
+
+/* line 83, ../scss/_grid-mixins.scss */
+._container-2 ._box {
+  width: 47%;
+}
+
+/* line 83, ../scss/_grid-mixins.scss */
+._container-3 ._box {
+  width: 30.66667%;
+}
+
+/* line 83, ../scss/_grid-mixins.scss */
+._container-4 ._box {
+  width: 22.5%;
+}
+
+/* line 83, ../scss/_grid-mixins.scss */
+._container-5 ._box {
+  width: 17.6%;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-480-1 ._box {
+    width: 96%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-480-2 ._box {
+    width: 47%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-480-3 ._box {
+    width: 30.66667%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-480-4 ._box {
+    width: 22.5%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-480-5 ._box {
+    width: 17.6%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-768-1 ._box {
+    width: 96%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-768-2 ._box {
+    width: 47%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-768-3 ._box {
+    width: 30.66667%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-768-4 ._box {
+    width: 22.5%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-768-5 ._box {
+    width: 17.6%;
+  }
+}
+@media screen and (max-width: 992px) {
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-992-1 ._box {
+    width: 96%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-992-2 ._box {
+    width: 47%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-992-3 ._box {
+    width: 30.66667%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-992-4 ._box {
+    width: 22.5%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-992-5 ._box {
+    width: 17.6%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-1200-1 ._box {
+    width: 96%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-1200-2 ._box {
+    width: 47%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-1200-3 ._box {
+    width: 30.66667%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-1200-4 ._box {
+    width: 22.5%;
+  }
+
+  /* line 93, ../scss/_grid-mixins.scss */
+  ._container-1200-5 ._box {
+    width: 17.6%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* line 103, ../scss/_grid-mixins.scss */
+  ._container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+}
+/* line 15, ../scss/styles.scss */
+._box {
+  border: 1px solid green;
+}

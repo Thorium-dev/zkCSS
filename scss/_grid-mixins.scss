@@ -1,0 +1,117 @@
+@mixin grid (
+  $length: $_max-box,
+  $gutter: $_gutter,
+  $breakpoints: $_breakpoints
+) {
+  [class^='_container-'] {
+    border: 1px solid red;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    // Donne la possibilité de faire un retour à la ligne
+    &._wrap {
+      flex-flow: row wrap;
+    }
+    // Alignement vertical des enfants possédant la class _box
+    &._align-top {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+    &._align-center {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    &._align-bottom {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end;
+    }
+    // Alignement horizontale des enfants possédant la class _box
+    &._pull-left {
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+    }
+    &._pull-center {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    &._pull-right {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+    // ...
+    &._collapse {
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+    // Gestion des retours à la ligne
+    &._nowrap {
+      flex-flow: row nowrap;
+    }
+
+    ._box {
+      // Alignement vertical de chaque item
+      &._align-top {
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+      }
+      &._align-center {
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+      }
+      &._align-bottom {
+        -ms-flex-item-align: end;
+        align-self: flex-end;
+      }
+    }
+
+  }
+
+  @for $i from 1 through $length {
+    ._container-#{$i} {
+      ._box {
+        width: (100% - ($gutter * ($i + 1))) / $i;
+      }
+    }
+  }
+
+  @each $breakpoint in $breakpoints {
+    @media screen and (max-width: #{$breakpoint}px) {
+      @for $i from 1 through $length {
+        ._container-#{$breakpoint}-#{$i} {
+          ._box {
+            width: (100% - ($gutter * ($i + 1))) / $i;
+          }
+        }
+      }
+    }
+  }
+
+  $last: nth($breakpoints, length($breakpoints));
+  @media screen and (min-width: #{$last + 1}px) {
+    ._container {
+      width: 100%;
+      max-width: #{$last}px;
+      margin: auto;
+    }
+
+  }
+
+}
+
+
+
+
+
+

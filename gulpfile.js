@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const configs = require('./gulpConfig').configs;
 const requires = {};
 
-var task, pipes, pipe, stream;
+var task, pipe, pipes, stream;
 
 // Récupération des modules de chaque tâche pour les placer dans le tableau requires
 for(task in configs){
@@ -12,14 +12,25 @@ for(task in configs){
    }
 }
 
-// Définition de chaque tache depuis le fichier de configuration
-for(task in configs){
-    pipes = configs[task].pipes;
-    gulp.task(task, function () {
-        stream = gulp.src(configs[task].src);
-        for(pipe in pipes){
-            stream = stream.pipe(requires[pipe](pipes[pipe]));
-        }
-        stream.pipe(gulp.dest(configs[task].dest));
-    });
-}
+// La tâche par défaut
+gulp.task('default', function () {
+    pipes = configs.default.pipes;
+    var stream = gulp.src(configs.default.src);
+    for(pipe in pipes){
+        stream = stream.pipe(requires[pipe](pipes[pipe]));
+    }
+    stream.pipe(gulp.dest(configs.default.dest));
+});
+
+// Tâche pour la prod
+gulp.task('prod', function () {
+    pipes = configs.prod.pipes;
+    var stream = gulp.src(configs.prod.src);
+    for(pipe in pipes){
+        stream = stream.pipe(requires[pipe](pipes[pipe]));
+    }
+    stream.pipe(gulp.dest(configs.prod.dest));
+});
+
+
+

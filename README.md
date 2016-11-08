@@ -12,8 +12,18 @@
     <li>Gulp : <code>npm install -g gulp</code></li>
 </ul>
 
+<h2>Installation des dépendances</h2>
+<p>
+    La commande <code>npm install</code> permet de faire l'installation des dépendances qui se trouvent dans <code>package.json</code>.
+</p>
+
 <h2>Compilation du scss</h2>
 <p>
     Par défaut, la commande <code>gulp</code> permet de faire la compilation du scss. <br>
     La compilation pour la <strong>prod</strong> se fait avec la commande <code>gulp prod</code>.
 </p>
+
+<h2>Utilisation des classes</h2>
+<ul>
+    <li><code>_container-{taille_ecran}-{nb_colonnes}</code> : </li>
+</ul>

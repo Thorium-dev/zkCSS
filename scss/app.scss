@@ -5,12 +5,9 @@
 
 @import "compass/reset";
 
-@import "grid-variables";
-@import "grid-mixins";
+@import "settings";
 
 @include grid();
-
-
 
 ._box {
   border: 1px solid green;

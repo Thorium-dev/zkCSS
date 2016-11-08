@@ -46,7 +46,7 @@ $breakpoints: 480 768 992 1200;
     &._collapse {
       justify-content: space-between;
     }
-    ._box {
+    ._box, ._column {
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -77,6 +77,15 @@ $breakpoints: 480 768 992 1200;
             width: (100% - ($gutter * ($i + 1))) / $i;
           }
         }
+      }
+      ._#{$breakpoint}-hide{
+        display: none;
+      }
+      ._#{$breakpoint}-show-block{
+        display: block;
+      }
+      ._#{$breakpoint}-show-inline{
+        display: inline;
       }
     }
   }

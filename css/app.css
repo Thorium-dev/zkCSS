@@ -72,6 +72,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
 }
+[class^='_container-']._nowrap {
+  -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+}
 [class^='_container-']._align-top {
   -webkit-box-align: start;
       -ms-flex-align: start;
@@ -107,20 +111,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-[class^='_container-']._nowrap {
-  -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
-}
-[class^='_container-'] ._box._align-top {
+[class^='_container-'] ._box._align-top, [class^='_container-'] ._column._align-top {
   -ms-flex-item-align: start;
       align-self: flex-start;
 }
-[class^='_container-'] ._box._align-center {
+[class^='_container-'] ._box._align-center, [class^='_container-'] ._column._align-center {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
-[class^='_container-'] ._box._align-bottom {
+[class^='_container-'] ._box._align-bottom, [class^='_container-'] ._column._align-bottom {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
@@ -165,6 +165,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   ._container-480-5 ._box {
     width: 17.6%;
   }
+
+  ._480-hide {
+    display: none;
+  }
+
+  ._480-show-block {
+    display: block;
+  }
+
+  ._480-show-inline {
+    display: inline;
+  }
 }
 @media screen and (max-width: 768px) {
   ._container-768-1 ._box {
@@ -185,6 +197,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   ._container-768-5 ._box {
     width: 17.6%;
+  }
+
+  ._768-hide {
+    display: none;
+  }
+
+  ._768-show-block {
+    display: block;
+  }
+
+  ._768-show-inline {
+    display: inline;
   }
 }
 @media screen and (max-width: 992px) {
@@ -207,6 +231,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   ._container-992-5 ._box {
     width: 17.6%;
   }
+
+  ._992-hide {
+    display: none;
+  }
+
+  ._992-show-block {
+    display: block;
+  }
+
+  ._992-show-inline {
+    display: inline;
+  }
 }
 @media screen and (max-width: 1200px) {
   ._container-1200-1 ._box {
@@ -227,6 +263,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
   ._container-1200-5 ._box {
     width: 17.6%;
+  }
+
+  ._1200-hide {
+    display: none;
+  }
+
+  ._1200-show-block {
+    display: block;
+  }
+
+  ._1200-show-inline {
+    display: inline;
   }
 }
 @media screen and (min-width: 1201px) {

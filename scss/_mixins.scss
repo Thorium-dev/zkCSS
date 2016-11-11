@@ -1,10 +1,3 @@
-@import "compass/reset";
-
-// Variables
-$columns: 5;
-$gutter: 2%;
-$breakpoints: 480 768 992 1200;
-
 // Mixins
 @mixin grid (
   $columns: $columns,
@@ -102,9 +95,3 @@ $breakpoints: 480 768 992 1200;
   }
 
 }
-
-
-
-
-
-

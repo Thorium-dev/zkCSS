@@ -95,3 +95,23 @@
   }
 
 }
+
+@mixin arrow(
+  $size: 10px,
+  $color: #fff,
+  $position: "down"
+){
+  $deg: 45deg;
+  @if($position == "up"){ $deg: -135deg; }
+  @if($position == "top"){ $deg: -135deg; }
+  @if($position == "right"){ $deg: -45deg; }
+  @if($position == "down"){ $deg: 45deg; }
+  @if($position == "bottom"){ $deg: 45deg; }
+  @if($position == "left"){ $deg: 135deg; }
+  content: "";
+  width: $size;
+  height: $size;
+  border-bottom: 1px solid $color;
+  border-right: 1px solid $color;
+  transform: rotate($deg);
+}

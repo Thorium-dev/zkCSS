@@ -3,7 +3,13 @@ module.exports.configs = {
         'src': 'scss/app.scss',
         'dest': 'css',
         'pipes': {
-            'compass': { 'css': 'css', 'sass': 'scss'},
+            'compass': {
+                'comments': true,
+                'css': 'css',
+                'sass': 'scss',
+                'font': './fonts',
+                // 'debug': true
+            },
             'autoprefixer': {}
         }
     },

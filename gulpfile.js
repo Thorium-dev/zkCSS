@@ -18,6 +18,10 @@ gulp.task('default', function () {
     var stream = gulp.src(configs.default.src);
     for(pipe in pipes){
         stream = stream.pipe(requires[pipe](pipes[pipe]));
+        stream.on('error', function(error) {
+            console.log(error);
+            this.emit('end');
+        });
     }
     stream.pipe(gulp.dest(configs.default.dest));
 });

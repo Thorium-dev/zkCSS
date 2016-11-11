@@ -52,9 +52,23 @@
 <p>
     Les mixins sont utilisées pour générer les propriétés css.
 </p>
-<h3><code>grid($columns, $gutter, $breakpoints)</code></h3>
+<h3><code>grid($columns: 5, $gutter: 2%, $breakpoints: 480 768 992 1200)</code></h3>
 <ul>
     <li><code>$columns</code> : Nombre maximal de colonnes. Défaut : <code>5</code></li>
     <li><code>$gutter</code> : Valeur d'espacement entre les colonnes. Défaut : <code>2%</code></li>
     <li><code>$breakpoints</code> : Les points de rupture. Défaut : <code>480 768 992 1200</code></li>
+</ul>
+
+<h3><code>arrow( $size: 10px, $color: #fff, $position: 'down' )</code></h3>
+<p>
+    Dessine une flèche
+</p>
+<ul>
+    <li><code>$size</code> : Taille de la flèche. Défaut : <code>10px</code></li>
+    <li><code>$color</code> : Couleur de la flèche. Défaut : <code>#fff</code></li>
+    <li>
+        <code>$position</code> : Direction de la flèche. Défaut : <code>'down'</code>. <br>
+        Les valeurs possibles sont :
+        <code>'up'</code>, <code>'top'</code>, <code>'right'</code>, <code>'down'</code>, <code>'bttom'</code> et <code>'left'</code>
+    </li>
 </ul>

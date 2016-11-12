@@ -1,4 +1,3 @@
-// Mixins
 @mixin grid (
   $columns: $columns,
   $gutter: $gutter,
@@ -8,39 +7,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    // Forcer le retour à la ligne
-    &._wrap {
-      flex-flow: row wrap;
-    }
-    // Empêcher le retour à la ligne
-    &._nowrap {
-      flex-flow: row nowrap;
-    }
-    // Alignement vertical des enfants possédant la class _box
-    &._align-top {
-      align-items: flex-start;
-    }
-    &._align-center {
-      align-items: center;
-    }
-    &._align-bottom {
-      align-items: flex-end;
-    }
-    // Alignement horizontale des enfants possédant la class _box
-    &._pull-left {
-      justify-content: flex-start;
-    }
-    &._pull-center {
-      justify-content: center;
-    }
-    &._pull-right {
-      justify-content: flex-end;
-    }
-    // ...
-    &._collapse {
-      justify-content: space-between;
-    }
     ._box, ._column {
+      display: block;
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -52,9 +20,58 @@
         align-self: flex-end;
       }
     }
-
   }
 
+  // Forcer le retour à la ligne
+  ._wrap {
+    flex-flow: row wrap;
+  }
+  // Empêcher le retour à la ligne
+  ._no-wrap {
+    flex-flow: row nowrap;
+  }
+  // Alignement vertical des enfants
+  ._align-top {
+    align-items: flex-start;
+  }
+  ._align-center {
+    align-items: center;
+  }
+  ._align-bottom {
+    align-items: flex-end;
+  }
+
+  // Alignement horizontale des enfants
+  ._pull-left {
+    justify-content: flex-start;
+  }
+  ._pull-center {
+    justify-content: center;
+  }
+  ._pull-right {
+    justify-content: flex-end;
+  }
+
+  // Gestion des collapses
+  ._collapse {
+    justify-content: space-between;
+  }
+  ._no-collapse {
+    justify-content: space-around;
+  }
+
+  // Gestion du display
+  ._hide{
+    display: none;
+  }
+  ._show-block{
+    display: block;
+  }
+  ._show-inline{
+    display: inline;
+  }
+
+  // _container-{nombre_colonnes}
   @for $i from 1 through $columns {
     ._container-#{$i} {
       ._box {
@@ -63,15 +80,46 @@
     }
   }
 
-  @each $breakpoint in $breakpoints {
+  $count: length($breakpoints);
+  @for $i from 1 through $count {
+    $breakpoint: nth($breakpoints, $count - $i + 1);
     @media screen and (max-width: #{$breakpoint}px) {
-      @for $i from 1 through $columns {
-        ._container-#{$breakpoint}-#{$i} {
-          ._box {
-            width: (100% - ($gutter * ($i + 1))) / $i;
-          }
-        }
+      // Forcer le retour à la ligne
+      ._#{$breakpoint}-wrap {
+        flex-flow: row wrap;
       }
+      // Empêcher le retour à la ligne
+      ._#{$breakpoint}-no-wrap {
+        flex-flow: row nowrap;
+      }
+      // Alignement vertical des enfants
+      ._#{$breakpoint}-align-top {
+        align-items: flex-start;
+      }
+      ._#{$breakpoint}-align-center {
+        align-items: center;
+      }
+      ._#{$breakpoint}-align-bottom {
+        align-items: flex-end;
+      }
+      // Alignement horizontale des enfants
+      ._#{$breakpoint}-pull-left {
+        justify-content: flex-start;
+      }
+      ._#{$breakpoint}-pull-center {
+        justify-content: center;
+      }
+      ._#{$breakpoint}-pull-right {
+        justify-content: flex-end;
+      }
+      // Gestion des collapses
+      ._#{$breakpoint}-collapse {
+        justify-content: space-between;
+      }
+      ._#{$breakpoint}-no-collapse {
+        justify-content: space-around;
+      }
+      // Gestion du display
       ._#{$breakpoint}-hide{
         display: none;
       }
@@ -81,6 +129,15 @@
       ._#{$breakpoint}-show-inline{
         display: inline;
       }
+
+      @for $i from 1 through $columns {
+        ._container-#{$breakpoint}-#{$i} {
+          ._box {
+            width: (100% - ($gutter * ($i + 1))) / $i;
+          }
+        }
+      }
+
     }
   }
 
@@ -114,4 +171,36 @@
   border-bottom: 1px solid $color;
   border-right: 1px solid $color;
   transform: rotate($deg);
+}
+
+@mixin border-radius($top: 10px, $right: 10px, $bottom: 10px, $left: 10px, $all: null){
+  @if ($all != null) { $top: $all; $right: $all; $bottom: $all; $left: $all; }
+  border-radius: $top $right $bottom $left;
+}
+
+@mixin button (
+  $width: 100%,
+  $color: #fff,
+  $padding: 10px 0,
+  $radius: 10px,
+  $bgc: #3498DB
+){
+  width: $width;
+  color: $color;
+  padding: $padding;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  @include border-radius($all: $radius);
+  transition: all 0.1s;
+  background-color: $bgc;
+  border-bottom: 5px solid darken($bgc, 10%);
+  text-shadow: 0px -2px darken($bgc, 10%);
+  &:active {
+    transform: translate(0px,5px);
+    border-bottom: 0;
+  }
+
+
 }

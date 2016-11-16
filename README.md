@@ -31,21 +31,41 @@
     <li><code>_container-{nb_colonnes}</code> : Indique un conteneur avec le nombre de colonnes.</li>
     <li><code>_container-{taille_ecran}-{nb_colonnes}</code> : Indique un conteneur avec le nombre de colonnes en fonction de la taille de l'écran.</li>
     <li><code>_wrap</code> : Force le retour à la ligne.</li>
-    <li><code>_nowrap</code> : Empêche le retour à la ligne.</li>
+    <li><code>_{taille_ecran}-wrap</code> : Force le retour à la ligne en fonction de la taille de l'écran.</li>
+    <li><code>_no-wrap</code> : Empêche le retour à la ligne.</li>
+    <li><code>_{taille_ecran}-no-wrap</code> : Empêche le retour à la ligne en fonction de la taille de l'écran.</li>
     <li><code>_align-top</code> : Alignement vertical vers le haut des enfants possédant la classe <code>_box</code>.</li>
+    <li><code>_{taille_ecran}-align-top</code> : Alignement vertical vers le haut des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_align-center</code> : Alignement vertical vers le centre des enfants possédant la classe <code>_box</code>.</li>
+    <li><code>_{taille_ecran}-align-center</code> : Alignement vertical vers le centre des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_align-bottom</code> : Alignement vertical vers le haut des enfants possédant la classe <code>_box</code>.</li>
+    <li><code>_{taille_ecran}-align-bottom</code> : Alignement vertical vers le haut des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_pull-left</code> : Alignement horizontale vers la gauche des enfants possédant la classe <code>_box</code>.</li>
+    <li><code>_{taille_ecran}-pull-left</code> : Alignement horizontale vers la gauche des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_pull-center</code> : Alignement horizontale vers le centre des enfants possédant la classe <code>_box</code>.</li>
+    <li><code>_{taille_ecran}-pull-center</code> : Alignement horizontale vers le centre des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_pull-right</code> : Alignement horizontale vers la droite des enfants possédant la classe <code>_box</code>.</li>
-    <li><code>_collapse</code> : </li>
+    <li><code>_{taille_ecran}-pull-right</code> : Alignement horizontale vers la droite des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
+    <li><code>_collapse</code> : Colle les bords de la grille.</li>
+    <li><code>_{taille_ecran}-collapse</code> : Colle les bords de la grille en fonction de la taille de l'écran.</li>
+    <li><code>_no-collapse</code> : Ne colle pas les bords de la grille.</li>
+    <li><code>_{taille_ecran}-no-collapse</code> : Ne colle pas les bords de la grille en fonction de la taille de l'écran.</li>
+    <li><code>_hide</code> : Cache un élément.</li>
+    <li><code>_{taille_ecran}-hide</code> : Cache un élément en fonction de la taille de l'écran.</li>
+    <li><code>_show-block</code> : Affiche un élément sous forme de block.</li>
+    <li><code>_{taille_ecran}-show-block</code> : Affiche un élément sous forme de block en fonction de la taille de l'écran.</li>
+    <li><code>_show-inline</code> : Affiche un élément sous forme de ligne.</li>
+    <li><code>_{taille_ecran}-show-inline</code> : Affiche un élément sous forme de ligne en fonction de la taille de l'écran.</li>
     <li>
         <code>_box</code>, <code>_column</code> : Indiquent q'un élément est une colonne.
          On peut aligner verticalement cette colonne en utilisant les classes <code>_align-top</code>, <code>_align-center</code> et <code>_align-bottom</code> 
     </li>
-    <li><code>_{taille_ecran}-hide</code> : Masque un élément en fonction de la taille de l'écran.</li>
-    <li><code>_{taille_ecran}-show-block</code> : Affiche un élément en block en fonction de la taille de l'écran.</li>
-    <li><code>_{taille_ecran}-show-inline</code> : Affiche un élément en ligne en fonction de la taille de l'écran.</li>
+    <li>
+        <code>_button</code> : Applique les styles pour obtenir un bouton.
+    </li>
+    <li>
+        <code>_button-3d</code> : Applique les styles pour obtenir un bouton en 3D. Veillez à indiquer class <code>_button</code> en plus de cette class.
+    </li>
 </ul>
 
 <h2>Mixins</h2>
@@ -53,6 +73,9 @@
     Les mixins sont utilisées pour générer les propriétés css.
 </p>
 <h3><code>grid($columns: 5, $gutter: 2%, $breakpoints: 480 768 992 1200)</code></h3>
+<p>
+    Dessine une grille responsive en fonction des valeurs du tableau <code>$breakpoint</code>.
+</p>
 <ul>
     <li><code>$columns</code> : Nombre maximal de colonnes. Défaut : <code>5</code></li>
     <li><code>$gutter</code> : Valeur d'espacement entre les colonnes. Défaut : <code>2%</code></li>
@@ -61,7 +84,7 @@
 
 <h3><code>arrow( $size: 10px, $color: #fff, $position: 'down' )</code></h3>
 <p>
-    Dessine une flèche
+    Dessine une flèche.
 </p>
 <ul>
     <li><code>$size</code> : Taille de la flèche. Défaut : <code>10px</code></li>
@@ -71,4 +94,20 @@
         Les valeurs possibles sont :
         <code>'up'</code>, <code>'top'</code>, <code>'right'</code>, <code>'down'</code>, <code>'bttom'</code> et <code>'left'</code>
     </li>
+</ul>
+
+<h3><code>button( $bgc: #6f5499 )</code></h3>
+<p>
+    Dessine un bouton.
+</p>
+<ul>
+    <li><code>$bgc</code> : La couleur du bouton. Défaut : <code>#6f5499</code></li>
+</ul>
+
+<h3><code>button-color( $bgc: #6f5499 )</code></h3>
+<p>
+    Change la couleur d'un bouton. Cette mixin est à utiliser après l'utilisation de la mixin <code>button</code>.
+</p>
+<ul>
+    <li><code>$bgc</code> : La couleur du bouton. Défaut : <code>#6f5499</code></li>
 </ul>

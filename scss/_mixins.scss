@@ -3,12 +3,11 @@
   $gutter: $gutter,
   $breakpoints: $breakpoints
 ) {
-  [class^='_container-'] {
+  [class*='_container-'] {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     ._box, ._column {
-      display: block;
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -23,55 +22,30 @@
   }
 
   // Forcer le retour à la ligne
-  ._wrap {
-    flex-flow: row wrap;
-  }
+  ._wrap { flex-flow: row wrap; }
   // Empêcher le retour à la ligne
-  ._no-wrap {
-    flex-flow: row nowrap;
-  }
+  ._no-wrap { flex-flow: row nowrap; }
+
   // Alignement vertical des enfants
-  ._align-top {
-    align-items: flex-start;
-  }
-  ._align-center {
-    align-items: center;
-  }
-  ._align-bottom {
-    align-items: flex-end;
-  }
+  ._align-top { align-items: flex-start; }
+  ._align-center { align-items: center; }
+  ._align-bottom { align-items: flex-end; }
 
   // Alignement horizontale des enfants
-  ._pull-left {
-    justify-content: flex-start;
-  }
-  ._pull-center {
-    justify-content: center;
-  }
-  ._pull-right {
-    justify-content: flex-end;
-  }
+  ._pull-left { justify-content: flex-start; }
+  ._pull-center { justify-content: center; }
+  ._pull-right { justify-content: flex-end; }
 
   // Gestion des collapses
-  ._collapse {
-    justify-content: space-between;
-  }
-  ._no-collapse {
-    justify-content: space-around;
-  }
+  ._collapse { justify-content: space-between; }
+  ._no-collapse { justify-content: space-around; }
 
   // Gestion du display
-  ._hide{
-    display: none;
-  }
-  ._show-block{
-    display: block;
-  }
-  ._show-inline{
-    display: inline;
-  }
+  ._hide{ display: none; }
+  ._show-block{ display: block; }
+  ._show-inline{ display: inline; }
 
-  // _container-{nombre_colonnes}
+  // Gestion des containers
   @for $i from 1 through $columns {
     ._container-#{$i} {
       ._box {
@@ -80,62 +54,90 @@
     }
   }
 
+  // Gestion des Margins et paddings
+  @each $item in $margins-paddings {
+    $px: px;
+    @if($item == auto){ $px: null; }
+    ._m-#{$item} { margin: #{$item}#{$px}; }
+    ._m-t-#{$item} { margin-top: #{$item}#{$px}; }
+    ._m-r-#{$item} { margin-right: #{$item}#{$px}; }
+    ._m-b-#{$item} { margin-bottom: #{$item}#{$px}; }
+    ._m-l-#{$item} { margin-left: #{$item}#{$px}; }
+
+    ._p-#{$item} { padding: #{$item}#{$px}; }
+    ._p-t-#{$item} { margin-top: #{$item}#{$px}; }
+    ._p-r-#{$item} { margin-right: #{$item}#{$px}; }
+    ._p-b-#{$item} { margin-bottom: #{$item}#{$px}; }
+    ._p-l-#{$item} { margin-left: #{$item}#{$px}; }
+
+  }
+
+  // Gestion des font-size
+  @for $i from 8 through $font-sizes {
+    ._f-s-#{$i} { font-size: #{$i}px; }
+  }
+
+
+  // Responsive
   $count: length($breakpoints);
   @for $i from 1 through $count {
     $breakpoint: nth($breakpoints, $count - $i + 1);
     @media screen and (max-width: #{$breakpoint}px) {
-      // Forcer le retour à la ligne
-      ._#{$breakpoint}-wrap {
-        flex-flow: row wrap;
-      }
-      // Empêcher le retour à la ligne
-      ._#{$breakpoint}-no-wrap {
-        flex-flow: row nowrap;
-      }
-      // Alignement vertical des enfants
-      ._#{$breakpoint}-align-top {
-        align-items: flex-start;
-      }
-      ._#{$breakpoint}-align-center {
-        align-items: center;
-      }
-      ._#{$breakpoint}-align-bottom {
-        align-items: flex-end;
-      }
-      // Alignement horizontale des enfants
-      ._#{$breakpoint}-pull-left {
-        justify-content: flex-start;
-      }
-      ._#{$breakpoint}-pull-center {
-        justify-content: center;
-      }
-      ._#{$breakpoint}-pull-right {
-        justify-content: flex-end;
-      }
-      // Gestion des collapses
-      ._#{$breakpoint}-collapse {
-        justify-content: space-between;
-      }
-      ._#{$breakpoint}-no-collapse {
-        justify-content: space-around;
-      }
-      // Gestion du display
-      ._#{$breakpoint}-hide{
-        display: none;
-      }
-      ._#{$breakpoint}-show-block{
-        display: block;
-      }
-      ._#{$breakpoint}-show-inline{
-        display: inline;
-      }
 
+      // Forcer le retour à la ligne
+      ._#{$breakpoint}-wrap { flex-flow: row wrap; }
+      // Empêcher le retour à la ligne
+      ._#{$breakpoint}-no-wrap { flex-flow: row nowrap; }
+
+      // Alignement vertical des enfants
+      ._#{$breakpoint}-align-top { align-items: flex-start; }
+      ._#{$breakpoint}-align-center { align-items: center; }
+      ._#{$breakpoint}-align-bottom { align-items: flex-end; }
+
+      // Alignement horizontale des enfants
+      ._#{$breakpoint}-pull-left { justify-content: flex-start; }
+      ._#{$breakpoint}-pull-center { justify-content: center; }
+      ._#{$breakpoint}-pull-right { justify-content: flex-end; }
+
+      // Gestion des collapses
+      ._#{$breakpoint}-collapse { justify-content: space-between; }
+      ._#{$breakpoint}-no-collapse { justify-content: space-around; }
+
+      // Gestion du display
+      ._#{$breakpoint}-hide{ display: none; }
+      ._#{$breakpoint}-show-block{ display: block; }
+      ._#{$breakpoint}-show-inline{ display: inline; }
+
+      // Gestion des containers
       @for $i from 1 through $columns {
         ._container-#{$breakpoint}-#{$i} {
           ._box {
             width: (100% - ($gutter * ($i + 1))) / $i;
           }
         }
+      }
+
+      // Gestion des Margins et paddings
+      @each $item in $margins-paddings {
+        $px: px;
+        @if($item == auto){ $px: null; }
+        ._#{$breakpoint}-m-#{$item} { margin: #{$item}#{$px}; }
+        ._#{$breakpoint}-m-t-#{$item} { margin-top: #{$item}#{$px}; }
+        ._#{$breakpoint}-m-r-#{$item} { margin-right: #{$item}#{$px}; }
+        ._#{$breakpoint}-m-b-#{$item} { margin-bottom: #{$item}#{$px}; }
+        ._#{$breakpoint}-m-l-#{$item} { margin-left: #{$item}#{$px}; }
+
+        ._#{$breakpoint}-p-#{$item} { padding: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-t-#{$item} { margin-top: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-r-#{$item} { margin-right: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-b-#{$item} { margin-bottom: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-l-#{$item} { margin-left: #{$item}#{$px}; }
+
+      }
+
+      // Gestion des font-size
+      @for $i from 8 through $font-sizes {
+        ._#{$breakpoint}-f-s-#{$i} { font-size: #{$i}px; }
       }
 
     }
@@ -148,7 +150,6 @@
       max-width: #{$last}px;
       margin: auto;
     }
-
   }
 
 }

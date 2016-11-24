@@ -68,6 +68,105 @@
     </li>
 </ul>
 
+<h3>Classes pour le <code>font-size</code></h3>
+<p>
+    Les classes utilisées pour le <code>font-size</code> se basent sur la variables <code>$font-sizes</code>.
+    Par défaut, les tailles vont de <code>8px</code> à <code>50px</code>.
+</p>
+<ul>
+    <li>
+        <code>_f-s-{taille}</code> : Applique une taille de police.
+    </li>
+    <li>
+        <code>_{taille_ecran}-f-s-{taille}</code> : Applique une taille de police en fonction de la taille de l'écran.
+    </li>
+</ul>
+
+<h3>Classes pour le <code>margin</code></h3>
+<p>
+    Les classes utilisées pour le <code>margin</code> et <code>padding</code> se basent sur la variables <code>$margins-paddings</code>.
+    Les valeurs par défaut sont <code>5 10 15 20 25 30 35 40 45 50 auto</code>.
+</p>
+<ul>
+    <li>
+        <code>_m-{taille}</code> : Applique un <code>margin</code>
+    </li>
+    <li>
+        <code>_m-t-{taille}</code> : Applique un <code>margin-top</code>
+    </li>
+    <li>
+        <code>_m-r-{taille}</code> : Applique un <code>margin-right</code>
+    </li>
+    <li>
+        <code>_m-b-{taille}</code> : Applique un <code>margin-bottom</code>
+    </li>
+    <li>
+        <code>_m-l-{taille}</code> : Applique un <code>margin-left</code>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-m-{taille}</code> : Applique un <code>margin</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-m-t-{taille}</code> : Applique un <code>margin-top</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-m-r-{taille}</code> : Applique un <code>margin-right</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-m-b-{taille}</code> : Applique un <code>margin-bottom</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-m-l-{taille}</code> : Applique un <code>margin-left</code> en fonction de la taille de l'écran.
+    </li>
+</ul>
+
+<h3>Classes pour le <code>padding</code></h3>
+<ul>
+    <li>
+        <code>_p-{taille}</code> : Applique un <code>padding</code>
+    </li>
+    <li>
+        <code>_p-t-{taille}</code> : Applique un <code>padding-top</code>
+    </li>
+    <li>
+        <code>_p-r-{taille}</code> : Applique un <code>padding-right</code>
+    </li>
+    <li>
+        <code>_p-b-{taille}</code> : Applique un <code>padding-bottom</code>
+    </li>
+    <li>
+        <code>_p-l-{taille}</code> : Applique un <code>padding-left</code>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-p-{taille}</code> : Applique un <code>padding</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-p-t-{taille}</code> : Applique un <code>padding-top</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-p-r-{taille}</code> : Applique un <code>padding-right</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-p-b-{taille}</code> : Applique un <code>padding-bottom</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-p-l-{taille}</code> : Applique un <code>padding-left</code> en fonction de la taille de l'écran.
+    </li>
+</ul>
+
+
+
+
+
+
+
+
 <h2>Mixins</h2>
 <p>
     Les mixins sont utilisées pour générer les propriétés css.

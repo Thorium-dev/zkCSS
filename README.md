@@ -57,14 +57,30 @@
     <li><code>_show-inline</code> : Affiche un élément sous forme de ligne.</li>
     <li><code>_{taille_ecran}-show-inline</code> : Affiche un élément sous forme de ligne en fonction de la taille de l'écran.</li>
     <li>
-        <code>_box</code>, <code>_column</code> : Indiquent q'un élément est une colonne.
-         On peut aligner verticalement cette colonne en utilisant les classes <code>_align-top</code>, <code>_align-center</code> et <code>_align-bottom</code> 
-    </li>
-    <li>
         <code>_button</code> : Applique les styles pour obtenir un bouton.
     </li>
     <li>
         <code>_button-3d</code> : Applique les styles pour obtenir un bouton en 3D. Veillez à indiquer class <code>_button</code> en plus de cette class.
+    </li>
+</ul>
+
+
+<h3>Classes pour les boxes ou colonnes</h3>
+<p>
+    On peut aligner verticalement les boxes ou colonnes en utilisant les classes <code>_align-top</code>, <code>_align-center</code> et <code>_align-bottom</code>
+</p>
+<ul>
+    <li>
+        <code>_box</code> : Indiquent q'un élément est une colonne ou une box.
+    </li>
+    <li>
+        <code>_box-{taille}</code> : Modifie la largeur d'une boxe ou colonne.
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-box-{taille}</code> : Modifie la largeur d'une boxe ou colonne en fonction de la taille de l'écran.
     </li>
 </ul>
 

@@ -227,6 +227,30 @@
     </li>
 </ul>
 
+<h3>Classes pour le <code>text-align</code></h3>
+<ul>
+    <li>
+        <code>_text-left</code> : Applique un <code>text-align: left;</code>
+    </li>
+    <li>
+        <code>_text-center</code> : Applique un <code>text-align: center;</code>
+    </li>
+    <li>
+        <code>_text-right</code> : Applique un <code>text-align: right;</code>
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-text-left</code> : Applique un <code>text-align: left;</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-text-center</code> : Applique un <code>text-align: center;</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-text-right</code> : Applique un <code>text-align: right;</code> en fonction de la taille de l'écran.
+    </li>
+</ul>
 
 
 

@@ -70,13 +70,16 @@
 
 <h3>Classes pour le <code>font-size</code></h3>
 <p>
-    Les classes utilisées pour le <code>font-size</code> se basent sur la variables <code>$font-sizes</code>.
+    Les classes utilisées pour le <code>font-size</code> se basent sur la variable <code>$font-sizes</code>.
     Par défaut, les tailles vont de <code>8px</code> à <code>50px</code>.
 </p>
 <ul>
     <li>
         <code>_f-s-{taille}</code> : Applique une taille de police.
     </li>
+</ul>
+
+<ul>
     <li>
         <code>_{taille_ecran}-f-s-{taille}</code> : Applique une taille de police en fonction de la taille de l'écran.
     </li>
@@ -84,7 +87,7 @@
 
 <h3>Classes pour le <code>margin</code></h3>
 <p>
-    Les classes utilisées pour le <code>margin</code> et <code>padding</code> se basent sur la variables <code>$margins-paddings</code>.
+    Les classes utilisées pour le <code>margin</code> se basent sur la variable <code>$margins-paddings</code>.
     Les valeurs par défaut sont <code>5 10 15 20 25 30 35 40 45 50 auto</code>.
 </p>
 <ul>
@@ -124,6 +127,10 @@
 </ul>
 
 <h3>Classes pour le <code>padding</code></h3>
+<p>
+    Les classes utilisées pour le <code>padding</code> se basent sur la variable <code>$margins-paddings</code>.
+    Les valeurs par défaut sont <code>5 10 15 20 25 30 35 40 45 50 auto</code>.
+</p>
 <ul>
     <li>
         <code>_p-{taille}</code> : Applique un <code>padding</code>
@@ -157,6 +164,50 @@
     </li>
     <li>
         <code>_{taille_ecran}-p-l-{taille}</code> : Applique un <code>padding-left</code> en fonction de la taille de l'écran.
+    </li>
+</ul>
+
+<h3>Classes pour le <code>color</code></h3>
+<p>
+    Les classes utilisées pour le <code>color</code> se basent sur les variables <code>$colors-name</code> et <code>$colors</code>.
+</p>
+<ul>
+    <li>
+        <code>_color-{nom_de_la_couleur}</code> : Applique une couleur.
+    </li>
+    <li>
+        <code>_hover-color-{nom_de_la_couleur}</code> : Applique une couleur pour le hover.
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-color-{nom_de_la_couleur}</code> : Applique une couleur en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-hover-color-{nom_de_la_couleur}</code> : Applique une couleur pour le hover en fonction de la taille de l'écran.
+    </li>
+</ul>
+
+<h3>Classes pour le <code>background-color</code></h3>
+<p>
+    Les classes utilisées pour le <code>background-color</code> se basent sur les variables <code>$colors-name</code> et <code>$colors</code>.
+</p>
+<ul>
+    <li>
+        <code>_bgc-{nom_de_la_couleur}</code> : Applique un <code>background-color</code>.
+    </li>
+    <li>
+        <code>_hover-bgc-{nom_de_la_couleur}</code> : Applique un <code>background-color</code> pour le hover.
+    </li>
+</ul>
+
+<ul>
+    <li>
+        <code>_{taille_ecran}-bgc-{nom_de_la_couleur}</code> : Applique un <code>background-color</code> en fonction de la taille de l'écran.
+    </li>
+    <li>
+        <code>_{taille_ecran}-hover-bgc-{nom_de_la_couleur}</code> : Applique un <code>background-color</code> pour le hover en fonction de la taille de l'écran.
     </li>
 </ul>
 

@@ -1,3 +1,4 @@
+// @TODO : Ajout de la classe gutter
 @mixin grid (
   $columns: $columns,
   $gutter: $gutter,
@@ -7,7 +8,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    ._box, ._column {
+    ._box {
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -45,14 +46,27 @@
   ._show-block{ display: block; }
   ._show-inline{ display: inline; }
 
-  // Gestion des containers
+  // Gestion du text-align
+  ._text-left { text-align: left; }
+  ._text-center { text-align: center; }
+  ._text-right { text-align: right; }
+
+  // Gestion des boxes
   @for $i from 1 through $columns {
     ._container-#{$i} {
       ._box {
-        width: (100% - ($gutter * ($i + 1))) / $i;
+        width: (100% - ($gutter * $i)) / $i;
+      }
+      @for $j from 1 through $columns {
+        ._box-#{$j} {
+          width: ($j / $i) * (100% - ($gutter * $j));
+        }
       }
     }
   }
+
+  // Gestion des boxes
+
 
   // Gestion des Margins et paddings
   @each $item in $margins-paddings {
@@ -118,11 +132,21 @@
       ._#{$breakpoint}-show-block{ display: block; }
       ._#{$breakpoint}-show-inline{ display: inline; }
 
-      // Gestion des containers
+      // Gestion du text-align
+      ._#{$breakpoint}-text-left { text-align: left; }
+      ._#{$breakpoint}-text-center { text-align: center; }
+      ._#{$breakpoint}-text-right { text-align: right; }
+
+      // Gestion des boxes
       @for $i from 1 through $columns {
         ._container-#{$breakpoint}-#{$i} {
           ._box {
-            width: (100% - ($gutter * ($i + 1))) / $i;
+            width: (100% - ($gutter * $i)) / $i;
+          }
+          @for $j from 1 through $columns {
+            ._#{$breakpoint}-box-#{$j} {
+              width: ($j / $i) * (100% - ($gutter * $j));
+            }
           }
         }
       }

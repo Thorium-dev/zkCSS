@@ -77,6 +77,16 @@
     ._f-s-#{$i} { font-size: #{$i}px; }
   }
 
+  // Gestion des couleurs
+  @for $i from 1 through length($colors-name) {
+    $name: nth($colors-name, $i);
+    $color: nth($colors, $i);
+    ._color-#{$name} { color: #{$color}; }
+    ._bgc-#{$name} { background-color: #{$color}; }
+    ._hover-color-#{$name}:hover { color: #{$color}; }
+    ._hover-bgc-#{$name}:hover { background-color: #{$color}; }
+  }
+
 
   // Responsive
   $count: length($breakpoints);
@@ -140,9 +150,20 @@
         ._#{$breakpoint}-f-s-#{$i} { font-size: #{$i}px; }
       }
 
+      // Gestion des couleurs
+      @for $i from 1 through length($colors-name) {
+        $name: nth($colors-name, $i);
+        $color: nth($colors, $i);
+        ._#{$breakpoint}-color-#{$name} { color: #{$color}; }
+        ._#{$breakpoint}-bgc-#{$name} { background-color: #{$color}; }
+        ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}; }
+        ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}; }
+      }
+
     }
   }
 
+  // Denier élément + 1
   $last: nth($breakpoints, length($breakpoints));
   @media screen and (min-width: #{$last + 1}px) {
     ._container {

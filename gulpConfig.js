@@ -4,6 +4,7 @@ module.exports.configs = {
         'dest': 'css',
         'pipes': {
             'compass': {
+                'config_file': './config.rb',
                 'comments': true,
                 'css': 'css',
                 'sass': 'scss',
@@ -17,7 +18,11 @@ module.exports.configs = {
         'src': 'scss/app.scss',
         'dest': 'css',
         'pipes': {
-            'compass': { 'css': 'css', 'sass': 'scss'},
+            'compass': {
+                'config_file': './config.rb',
+                'css': 'css',
+                'sass': 'scss'
+            },
             'autoprefixer': {},
             'uglifycss': {},
             'rename': 'app.min.css'

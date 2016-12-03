@@ -65,9 +65,6 @@
     }
   }
 
-  // Gestion des boxes
-
-
   // Gestion des Margins et paddings
   @each $item in $margins-paddings {
     $px: px;

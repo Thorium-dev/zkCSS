@@ -4,11 +4,12 @@
   $gutter: $gutter,
   $breakpoints: $breakpoints
 ) {
-  [class*='_container-'] {
+  ._container-flex {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    ._box {
+    [class*='_box-']{
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -18,6 +19,11 @@
       }
       &._align-bottom {
         align-self: flex-end;
+      }
+    }
+    @for $j from 1 through 100 {
+      ._box-#{$j} {
+        width: unquote("#{$j}%");
       }
     }
   }
@@ -50,20 +56,6 @@
   ._text-left { text-align: left; }
   ._text-center { text-align: center; }
   ._text-right { text-align: right; }
-
-  // Gestion des boxes
-  @for $i from 1 through $columns {
-    ._container-#{$i} {
-      ._box {
-        width: (100% - ($gutter * $i)) / $i;
-      }
-      @for $j from 1 through $columns {
-        ._box-#{$j} {
-          width: ($j / $i) * (100% - ($gutter * $j));
-        }
-      }
-    }
-  }
 
   // Gestion des Margins et paddings
   @each $item in $margins-paddings {
@@ -111,9 +103,14 @@
       ._#{$breakpoint}-no-wrap { flex-flow: row nowrap; }
 
       // Alignement vertical des enfants
-      ._#{$breakpoint}-align-top { align-items: flex-start; }
-      ._#{$breakpoint}-align-center { align-items: center; }
-      ._#{$breakpoint}-align-bottom { align-items: flex-end; }
+      ._#{$breakpoint}-align-top { align-self: flex-start; }
+      ._#{$breakpoint}-align-center { align-self: center; }
+      ._#{$breakpoint}-align-bottom { align-self: flex-end; }
+      ._container-flex {
+        ._#{$breakpoint}-align-top { align-items: flex-start; }
+        ._#{$breakpoint}-align-center { align-items: center; }
+        ._#{$breakpoint}-align-bottom { align-items: flex-end; }
+      }
 
       // Alignement horizontale des enfants
       ._#{$breakpoint}-pull-left { justify-content: flex-start; }
@@ -135,15 +132,10 @@
       ._#{$breakpoint}-text-right { text-align: right; }
 
       // Gestion des boxes
-      @for $i from 1 through $columns {
-        ._container-#{$breakpoint}-#{$i} {
-          ._box {
-            width: (100% - ($gutter * $i)) / $i;
-          }
-          @for $j from 1 through $columns {
-            ._#{$breakpoint}-box-#{$j} {
-              width: ($j / $i) * (100% - ($gutter * $j));
-            }
+      ._container-flex {
+        @for $j from 1 through 100 {
+          ._#{$breakpoint}-box-#{$j} {
+            width: unquote("#{$j}%");
           }
         }
       }

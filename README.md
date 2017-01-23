@@ -28,8 +28,7 @@
         <code>_container</code> : Indique q'un élément est un conteneur. Sa largeur est la dernière valeur du tableau <code>$breakpoints</code> qui se trouve dans le fichier <code>_settings.scss</code>.
         Il est centré dans la page.
     </li>
-    <li><code>_container-{nb_colonnes}</code> : Indique un conteneur avec le nombre de colonnes.</li>
-    <li><code>_container-{taille_ecran}-{nb_colonnes}</code> : Indique un conteneur avec le nombre de colonnes en fonction de la taille de l'écran.</li>
+    <li><code>_container-flex</code> : Indique un conteneur qu'on a un container sous flex box.</li>
     <li><code>_wrap</code> : Force le retour à la ligne.</li>
     <li><code>_{taille_ecran}-wrap</code> : Force le retour à la ligne en fonction de la taille de l'écran.</li>
     <li><code>_no-wrap</code> : Empêche le retour à la ligne.</li>

@@ -1,6 +1,5 @@
 // @TODO : Ajout de la classe gutter
 @mixin grid (
-  $columns: $columns,
   $gutter: $gutter,
   $breakpoints: $breakpoints
 ) {
@@ -68,10 +67,10 @@
     ._m-l-#{$item} { margin-left: #{$item}#{$px}; }
 
     ._p-#{$item} { padding: #{$item}#{$px}; }
-    ._p-t-#{$item} { margin-top: #{$item}#{$px}; }
-    ._p-r-#{$item} { margin-right: #{$item}#{$px}; }
-    ._p-b-#{$item} { margin-bottom: #{$item}#{$px}; }
-    ._p-l-#{$item} { margin-left: #{$item}#{$px}; }
+    ._p-t-#{$item} { padding-top: #{$item}#{$px}; }
+    ._p-r-#{$item} { padding-right: #{$item}#{$px}; }
+    ._p-b-#{$item} { padding-bottom: #{$item}#{$px}; }
+    ._p-l-#{$item} { padding-left: #{$item}#{$px}; }
 
   }
 
@@ -151,10 +150,10 @@
         ._#{$breakpoint}-m-l-#{$item} { margin-left: #{$item}#{$px}; }
 
         ._#{$breakpoint}-p-#{$item} { padding: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-t-#{$item} { margin-top: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-r-#{$item} { margin-right: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-b-#{$item} { margin-bottom: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-l-#{$item} { margin-left: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-t-#{$item} { padding-top: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-r-#{$item} { padding-right: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-b-#{$item} { padding-bottom: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-l-#{$item} { padding-left: #{$item}#{$px}; }
 
       }
 

@@ -27,6 +27,14 @@
     }
   }
 
+  // Box columns
+  @for $i from 1 to $columns{
+    ._container-#{$i} {
+      ._box{
+        width: unquote("100/#{$i}%");
+      }
+    }
+  }
   // Forcer le retour à la ligne
   ._wrap { flex-flow: row wrap; }
   // Empêcher le retour à la ligne
@@ -228,6 +236,14 @@
         ._#{$breakpoint}-p-b-#{$item} { padding-bottom: #{$item}#{$px}; }
         ._#{$breakpoint}-p-l-#{$item} { padding-left: #{$item}#{$px}; }
 
+      }
+      // Box columns
+      @for $i from 1 to $columns{
+        ._#{$breakpoint}-container-#{$i} {
+          ._box{
+            width: unquote("100/#{$i}%");
+          }
+        }
       }
 
       // Gestion des font-size

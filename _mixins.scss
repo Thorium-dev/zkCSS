@@ -109,7 +109,7 @@
     ._bd-l-c-#{$name} { border-left-color: #{$color}; }
     ._bd-b-c-#{$name} { border-bottom-color: #{$color}; }
     ._bd-r-c-#{$name} { border-right-color: #{$color};}
-    ._f-c-#{$name} {color: #{$color}
+    ._f-c-#{$name} {color: #{$color};}
   }
 
 
@@ -162,7 +162,7 @@
         ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}; }
         ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}; }
         ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}; }
-        ._#{$breakpoint}-f-c-#{$name} {color: #{$color}
+        ._#{$breakpoint}-f-c-#{$name} {color: #{$color};}
         }
 
       //Gestion des bordures
@@ -224,7 +224,6 @@
         ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}; }
         ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}; }
       }
-
     }
   }
 

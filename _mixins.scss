@@ -66,7 +66,6 @@
     ._left-#{$i} { left : #{$i}px;}
   }
 
-
   //Gestion des bordures
   ._bd-none { border: none}
   @for $i from 0 through $border-width{

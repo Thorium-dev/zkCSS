@@ -104,11 +104,12 @@
     ._bgc-#{$name} { background-color: #{$color}; }
     ._hover-color-#{$name}:hover { color: #{$color}; }
     ._hover-bgc-#{$name}:hover { background-color: #{$color}; }
-    ._bdc-#{$name} { border-color: #{$color}; }
+    ._bd-c-#{$name} { border-color: #{$color}; }
     ._bd-t-c-#{$name} { border-top-color: #{$color}; }
     ._bd-l-c-#{$name} { border-left-color: #{$color}; }
     ._bd-b-c-#{$name} { border-bottom-color: #{$color}; }
     ._bd-r-c-#{$name} { border-right-color: #{$color};}
+    ._f-c-#{$name} {color: #{$color}
   }
 
 
@@ -152,7 +153,7 @@
       ._#{$breakpoint}-text-center { text-align: center; }
       ._#{$breakpoint}-text-right { text-align: right; }
 
-      //Gestion des bordures
+      //Gestion des couleurs
       @for $i from 1 through length($colors-name) {
         $name: nth($colors-name, $i);
         $color: nth($colors, $i);
@@ -161,7 +162,10 @@
         ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}; }
         ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}; }
         ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}; }
-      }
+        ._#{$breakpoint}-f-c-#{$name} {color: #{$color}
+        }
+
+      //Gestion des bordures
       ._#{$breakpoint}-bd-none {border: none;}
       @for $i from 0 through $border-width{
         ._#{$breakpoint}-bd-w-#{$i} {border-width: #{$i}px;}
@@ -177,6 +181,7 @@
         ._#{$breakpoint}-bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
         ._#{$breakpoint}-bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
       }
+
 
       // Gestion des boxes
       ._container-flex {

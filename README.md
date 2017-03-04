@@ -45,10 +45,10 @@
     <li><code>_{taille_ecran}-pull-center</code> : Alignement horizontale vers le centre des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
     <li><code>_pull-right</code> : Alignement horizontale vers la droite des enfants possédant la classe <code>_box</code>.</li>
     <li><code>_{taille_ecran}-pull-right</code> : Alignement horizontale vers la droite des enfants possédant la classe <code>_box</code> en fonction de la taille de l'écran.</li>
-    <li><code>_collapse</code> : Colle les bords de la grille.</li>
-    <li><code>_{taille_ecran}-collapse</code> : Colle les bords de la grille en fonction de la taille de l'écran.</li>
-    <li><code>_no-collapse</code> : Ne colle pas les bords de la grille.</li>
-    <li><code>_{taille_ecran}-no-collapse</code> : Ne colle pas les bords de la grille en fonction de la taille de l'écran.</li>
+    <li><code>_space-between</code> : Colle les bords de la grille.</li>
+    <li><code>_{taille_ecran}-space-between</code> : Colle les bords de la grille en fonction de la taille de l'écran.</li>
+    <li><code>_space-around</code> : Ne colle pas les bords de la grille.</li>
+    <li><code>_{taille_ecran}-space-around</code> : Ne colle pas les bords de la grille en fonction de la taille de l'écran.</li>
     <li><code>_hide</code> : Cache un élément.</li>
     <li><code>_{taille_ecran}-hide</code> : Cache un élément en fonction de la taille de l'écran.</li>
     <li><code>_show-block</code> : Affiche un élément sous forme de block.</li>

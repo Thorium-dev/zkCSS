@@ -1,6 +1,4 @@
-// @TODO : Ajout de la classe gutter
 @mixin grid (
-  $gutter: $gutter,
   $breakpoints: $breakpoints
 ) {
   ._container-flex {
@@ -36,98 +34,103 @@
     }
   }
   // Forcer le retour à la ligne
-  ._wrap { flex-flow: row wrap; }
+  ._wrap { flex-flow: row wrap}
   // Empêcher le retour à la ligne
-  ._no-wrap { flex-flow: row nowrap; }
+  ._no-wrap { flex-flow: row nowrap}
 
   // Alignement vertical des enfants
-  ._align-top { align-items: flex-start; }
-  ._align-center { align-items: center; }
-  ._align-bottom { align-items: flex-end; }
+  ._align-top { align-items: flex-start}
+  ._align-center { align-items: center}
+  ._align-bottom { align-items: flex-end}
 
   // Alignement horizontale des enfants
-  ._pull-left { justify-content: flex-start; }
-  ._pull-center { justify-content: center; }
-  ._pull-right { justify-content: flex-end; }
+  ._pull-left { justify-content: flex-start}
+  ._pull-center { justify-content: center}
+  ._pull-right { justify-content: flex-end}
 
   // Gestion des collapses
-  ._collapse { justify-content: space-between; }
-  ._no-collapse { justify-content: space-around; }
+  ._space-between { justify-content: space-between}
+  ._space-around { justify-content: space-around}
 
   // Gestion du display
-  ._hide{ display: none; }
-  ._show-block{ display: block; }
-  ._show-inline{ display: inline; }
+  ._hide{ display: none}
+  ._show-block{ display: block}
+  ._show-inline{ display: inline}
 
   // Gestion du text-align
-  ._text-left { text-align: left; }
-  ._text-center { text-align: center; }
-  ._text-right { text-align: right; }
+  ._text-left { text-align: left}
+  ._text-center { text-align: center}
+  ._text-right { text-align: right}
 
-  //Gestion des positions
-  ._relative{ position: relative;}
-  ._absolute{ position: absolute;}
+  // Gestion des positions
+  ._relative{ position: relative}
+  ._absolute{ position: absolute}
   @for $i from 0 through $position-values{
-    ._top-#{$i} { top : #{$i}px;}
-    ._bottom-#{$i} { bottom : #{$i}px;}
-    ._right-#{$i} { right : #{$i}px;}
-    ._left-#{$i} { left : #{$i}px;}
+    $px: px; @if($i == 0){ $px: null}
+    ._top-#{$i} { top : #{$i}#{$px}}
+    ._bottom-#{$i} { bottom : #{$i}#{$px}}
+    ._right-#{$i} { right : #{$i}#{$px}}
+    ._left-#{$i} { left : #{$i}#{$px}}
   }
 
-  //Gestion des bordures
+  // Gestion des bordures
   ._bd-none { border: none}
   @for $i from 0 through $border-width{
-    ._bd-w-#{$i} {border-width: #{$i}px;}
-    ._bd-t-w-#{$i} {border-top-width: #{$i}px;}
-    ._bd-b-w-#{$i} {border-bottom-width: #{$i}px;}
-    ._bd-l-w-#{$i} {border-left-width: #{$i}px;}
-    ._bd-r-w-#{$i} {border-right-width: #{$i}px;}
+    $px: px; @if($i == 0){ $px: null}
+    ._bd-w-#{$i} {border-width: #{$i}#{$px}}
+    ._bd-t-w-#{$i} {border-top-width: #{$i}#{$px}}
+    ._bd-b-w-#{$i} {border-bottom-width: #{$i}#{$px}}
+    ._bd-l-w-#{$i} {border-left-width: #{$i}#{$px}}
+    ._bd-r-w-#{$i} {border-right-width: #{$i}#{$px}}
   }
   @for $i from 0 through $border-radius{
-    ._bd-rad-#{$i} {border-radius: unquote("#{$i}%");}
-    ._bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%");}
-    ._bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%");}
-    ._bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
-    ._bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
+    ._bd-rad-#{$i} {border-radius: unquote("#{$i}%")}
+    ._bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%")}
+    ._bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%")}
+    ._bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%")}
+    ._bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%")}
   }
 
   // Gestion des Margins et paddings
   @each $item in $margins-paddings {
-    $px: px;
-    @if($item == auto){ $px: null; }
-    ._m-#{$item} { margin: #{$item}#{$px}; }
-    ._m-t-#{$item} { margin-top: #{$item}#{$px}; }
-    ._m-r-#{$item} { margin-right: #{$item}#{$px}; }
-    ._m-b-#{$item} { margin-bottom: #{$item}#{$px}; }
-    ._m-l-#{$item} { margin-left: #{$item}#{$px}; }
+    $px: px; @if($item == auto){ $px: null}
+    ._m-#{$item} { margin: #{$item}#{$px}}
+    ._m-t-#{$item} { margin-top: #{$item}#{$px}}
+    ._m-r-#{$item} { margin-right: #{$item}#{$px}}
+    ._m-b-#{$item} { margin-bottom: #{$item}#{$px}}
+    ._m-l-#{$item} { margin-left: #{$item}#{$px}}
 
-    ._p-#{$item} { padding: #{$item}#{$px}; }
-    ._p-t-#{$item} { padding-top: #{$item}#{$px}; }
-    ._p-r-#{$item} { padding-right: #{$item}#{$px}; }
-    ._p-b-#{$item} { padding-bottom: #{$item}#{$px}; }
-    ._p-l-#{$item} { padding-left: #{$item}#{$px}; }
+    ._p-#{$item} { padding: #{$item}#{$px}}
+    ._p-t-#{$item} { padding-top: #{$item}#{$px}}
+    ._p-r-#{$item} { padding-right: #{$item}#{$px}}
+    ._p-b-#{$item} { padding-bottom: #{$item}#{$px}}
+    ._p-l-#{$item} { padding-left: #{$item}#{$px}}
 
   }
 
   // Gestion des font-size
   @for $i from 8 through $font-sizes {
-    ._f-s-#{$i} { font-size: #{$i}px; }
+    ._f-s-#{$i} { font-size: #{$i}px}
   }
 
   // Gestion des couleurs
   @for $i from 1 through length($colors-name) {
+
     $name: nth($colors-name, $i);
     $color: nth($colors, $i);
-    ._color-#{$name} { color: #{$color}; }
-    ._bgc-#{$name} { background-color: #{$color}; }
-    ._hover-color-#{$name}:hover { color: #{$color}; }
-    ._hover-bgc-#{$name}:hover { background-color: #{$color}; }
-    ._bd-c-#{$name} { border-color: #{$color}; }
-    ._bd-t-c-#{$name} { border-top-color: #{$color}; }
-    ._bd-l-c-#{$name} { border-left-color: #{$color}; }
-    ._bd-b-c-#{$name} { border-bottom-color: #{$color}; }
-    ._bd-r-c-#{$name} { border-right-color: #{$color};}
-    ._f-c-#{$name} {color: #{$color};}
+
+    ._color-#{$name} { color: #{$color}}
+    ._bgc-#{$name} { background-color: #{$color}}
+    ._hover-color-#{$name}:hover { color: #{$color}}
+    ._hover-bgc-#{$name}:hover { background-color: #{$color}}
+
+    ._bd-c-#{$name} { border-color: #{$color}}
+    ._bd-t-c-#{$name} { border-top-color: #{$color}}
+    ._bd-l-c-#{$name} { border-left-color: #{$color}}
+    ._bd-b-c-#{$name} { border-bottom-color: #{$color}}
+    ._bd-r-c-#{$name} { border-right-color: #{$color}}
+    ._f-c-#{$name} {color: #{$color}}
+
   }
 
 
@@ -138,78 +141,87 @@
     @media screen and (max-width: #{$breakpoint}px) {
 
       // Forcer le retour à la ligne
-      ._#{$breakpoint}-wrap { flex-flow: row wrap; }
+      ._#{$breakpoint}-wrap { flex-flow: row wrap}
       // Empêcher le retour à la ligne
-      ._#{$breakpoint}-no-wrap { flex-flow: row nowrap; }
+      ._#{$breakpoint}-no-wrap { flex-flow: row nowrap}
 
       // Alignement vertical des enfants
-      ._#{$breakpoint}-align-top { align-self: flex-start; }
-      ._#{$breakpoint}-align-center { align-self: center; }
-      ._#{$breakpoint}-align-bottom { align-self: flex-end; }
+      ._#{$breakpoint}-align-top { align-self: flex-start}
+      ._#{$breakpoint}-align-center { align-self: center}
+      ._#{$breakpoint}-align-bottom { align-self: flex-end}
+
       ._container-flex {
-        ._#{$breakpoint}-align-top { align-items: flex-start; }
-        ._#{$breakpoint}-align-center { align-items: center; }
-        ._#{$breakpoint}-align-bottom { align-items: flex-end; }
+        ._#{$breakpoint}-align-top { align-items: flex-start}
+        ._#{$breakpoint}-align-center { align-items: center}
+        ._#{$breakpoint}-align-bottom { align-items: flex-end}
       }
 
       // Alignement horizontale des enfants
-      ._#{$breakpoint}-pull-left { justify-content: flex-start; }
-      ._#{$breakpoint}-pull-center { justify-content: center; }
-      ._#{$breakpoint}-pull-right { justify-content: flex-end; }
+      ._#{$breakpoint}-pull-left { justify-content: flex-start}
+      ._#{$breakpoint}-pull-center { justify-content: center}
+      ._#{$breakpoint}-pull-right { justify-content: flex-end}
 
       // Gestion des collapses
-      ._#{$breakpoint}-collapse { justify-content: space-between; }
-      ._#{$breakpoint}-no-collapse { justify-content: space-around; }
+      ._#{$breakpoint}-space-between { justify-content: space-between}
+      ._#{$breakpoint}-space-around { justify-content: space-around}
 
       // Gestion du display
-      ._#{$breakpoint}-hide{ display: none; }
-      ._#{$breakpoint}-show-block{ display: block; }
-      ._#{$breakpoint}-show-inline{ display: inline; }
+      ._#{$breakpoint}-hide{ display: none}
+      ._#{$breakpoint}-show-block{ display: block}
+      ._#{$breakpoint}-show-inline{ display: inline}
 
       // Gestion du text-align
-      ._#{$breakpoint}-text-left { text-align: left; }
-      ._#{$breakpoint}-text-center { text-align: center; }
-      ._#{$breakpoint}-text-right { text-align: right; }
+      ._#{$breakpoint}-text-left { text-align: left}
+      ._#{$breakpoint}-text-center { text-align: center}
+      ._#{$breakpoint}-text-right { text-align: right}
 
-      //Gestion des couleurs
+      // Gestion des couleurs
       @for $i from 1 through length($colors-name) {
+
         $name: nth($colors-name, $i);
         $color: nth($colors, $i);
-        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}; }
-        ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}; }
-        ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}; }
-        ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}; }
-        ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}; }
-        ._#{$breakpoint}-f-c-#{$name} {color: #{$color};}
-        }
 
-      //Gestion des bordures
-      ._#{$breakpoint}-bd-none {border: none;}
+        ._#{$breakpoint}-color-#{$name} { color: #{$color}}
+        ._#{$breakpoint}-bgc-#{$name} { background-color: #{$color}}
+        ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}}
+        ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}}
+
+        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}}
+        ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}}
+        ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}}
+        ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}}
+        ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}}
+        ._#{$breakpoint}-f-c-#{$name} {color: #{$color}}
+
+      }
+
+      // Gestion des bordures
+      ._#{$breakpoint}-bd-none {border: none}
       @for $i from 0 through $border-width{
-        ._#{$breakpoint}-bd-w-#{$i} {border-width: #{$i}px;}
-        ._#{$breakpoint}-bd-t-w-#{$i} {border-top-width: #{$i}px;}
-        ._#{$breakpoint}-bd-b-w-#{$i} {border-bottom-width: #{$i}px;}
-        ._#{$breakpoint}-bd-l-w-#{$i} {border-left-width: #{$i}px;}
-        ._#{$breakpoint}-bd-r-w-#{$i} {border-right-width: #{$i}px;}
+        ._#{$breakpoint}-bd-w-#{$i} {border-width: #{$i}px}
+        ._#{$breakpoint}-bd-t-w-#{$i} {border-top-width: #{$i}px}
+        ._#{$breakpoint}-bd-b-w-#{$i} {border-bottom-width: #{$i}px}
+        ._#{$breakpoint}-bd-l-w-#{$i} {border-left-width: #{$i}px}
+        ._#{$breakpoint}-bd-r-w-#{$i} {border-right-width: #{$i}px}
       }
+
       @for $i from 0 through $border-radius{
-        ._#{$breakpoint}-bd-rad-#{$i} {border-radius: unquote("#{$i}%");}
-        ._#{$breakpoint}-bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%");}
-        ._#{$breakpoint}-bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%");}
-        ._#{$breakpoint}-bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
-        ._#{$breakpoint}-bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
+        ._#{$breakpoint}-bd-rad-#{$i} {border-radius: unquote("#{$i}%")}
+        ._#{$breakpoint}-bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%")}
+        ._#{$breakpoint}-bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%")}
+        ._#{$breakpoint}-bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%")}
+        ._#{$breakpoint}-bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%")}
       }
-      //Gestion des positions
-      ._#{$breakpoint}-relative{ position: relative;}
-      ._#{$breakpoint}-absolute{ position: absolute;}
+
+      // Gestion des positions
+      ._#{$breakpoint}-relative{ position: relative}
+      ._#{$breakpoint}-absolute{ position: absolute}
       @for $i from 0 through $position-values{
-        ._#{$breakpoint}-top-#{$i} { top : #{$i}px;}
-        ._#{$breakpoint}-bottom-#{$i} { bottom : #{$i}px;}
-        ._#{$breakpoint}-right-#{$i} { right : #{$i}px;}
-        ._#{$breakpoint}-left-#{$i} { left : #{$i}px;}
+        ._#{$breakpoint}-top-#{$i} { top : #{$i}px}
+        ._#{$breakpoint}-bottom-#{$i} { bottom : #{$i}px}
+        ._#{$breakpoint}-right-#{$i} { right : #{$i}px}
+        ._#{$breakpoint}-left-#{$i} { left : #{$i}px}
       }
-
-
 
       // Gestion des boxes
       ._container-flex {
@@ -222,21 +234,21 @@
 
       // Gestion des Margins et paddings
       @each $item in $margins-paddings {
-        $px: px;
-        @if($item == auto){ $px: null; }
-        ._#{$breakpoint}-m-#{$item} { margin: #{$item}#{$px}; }
-        ._#{$breakpoint}-m-t-#{$item} { margin-top: #{$item}#{$px}; }
-        ._#{$breakpoint}-m-r-#{$item} { margin-right: #{$item}#{$px}; }
-        ._#{$breakpoint}-m-b-#{$item} { margin-bottom: #{$item}#{$px}; }
-        ._#{$breakpoint}-m-l-#{$item} { margin-left: #{$item}#{$px}; }
+        $px: px; @if ($item == auto){ $px: null}
+        ._#{$breakpoint}-m-#{$item} { margin: #{$item}#{$px}}
+        ._#{$breakpoint}-m-t-#{$item} { margin-top: #{$item}#{$px}}
+        ._#{$breakpoint}-m-r-#{$item} { margin-right: #{$item}#{$px}}
+        ._#{$breakpoint}-m-b-#{$item} { margin-bottom: #{$item}#{$px}}
+        ._#{$breakpoint}-m-l-#{$item} { margin-left: #{$item}#{$px}}
 
-        ._#{$breakpoint}-p-#{$item} { padding: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-t-#{$item} { padding-top: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-r-#{$item} { padding-right: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-b-#{$item} { padding-bottom: #{$item}#{$px}; }
-        ._#{$breakpoint}-p-l-#{$item} { padding-left: #{$item}#{$px}; }
+        ._#{$breakpoint}-p-#{$item} { padding: #{$item}#{$px}}
+        ._#{$breakpoint}-p-t-#{$item} { padding-top: #{$item}#{$px}}
+        ._#{$breakpoint}-p-r-#{$item} { padding-right: #{$item}#{$px}}
+        ._#{$breakpoint}-p-b-#{$item} { padding-bottom: #{$item}#{$px}}
+        ._#{$breakpoint}-p-l-#{$item} { padding-left: #{$item}#{$px}}
 
       }
+
       // Box columns
       @for $i from 1 to $columns{
         ._#{$breakpoint}-container-#{$i} {
@@ -248,19 +260,11 @@
 
       // Gestion des font-size
       @for $i from 8 through $font-sizes {
-        ._#{$breakpoint}-f-s-#{$i} { font-size: #{$i}px; }
+        ._#{$breakpoint}-f-s-#{$i} { font-size: #{$i}px}
       }
 
-      // Gestion des couleurs
-      @for $i from 1 through length($colors-name) {
-        $name: nth($colors-name, $i);
-        $color: nth($colors, $i);
-        ._#{$breakpoint}-color-#{$name} { color: #{$color}; }
-        ._#{$breakpoint}-bgc-#{$name} { background-color: #{$color}; }
-        ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}; }
-        ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}; }
-      }
     }
+
   }
 
   // Denier élément + 1
@@ -281,12 +285,12 @@
   $position: "down"
 ){
   $deg: 45deg;
-  @if($position == "up"){ $deg: -135deg; }
-  @if($position == "top"){ $deg: -135deg; }
-  @if($position == "right"){ $deg: -45deg; }
-  @if($position == "down"){ $deg: 45deg; }
-  @if($position == "bottom"){ $deg: 45deg; }
-  @if($position == "left"){ $deg: 135deg; }
+  @if($position == "up"){ $deg: -135deg}
+  @if($position == "top"){ $deg: -135deg}
+  @if($position == "right"){ $deg: -45deg}
+  @if($position == "down"){ $deg: 45deg}
+  @if($position == "bottom"){ $deg: 45deg}
+  @if($position == "left"){ $deg: 135deg}
   content: "";
   width: $size;
   height: $size;
@@ -296,7 +300,7 @@
 }
 
 @mixin border-radius($top: 10px, $right: 10px, $bottom: 10px, $left: 10px, $all: null){
-  @if ($all != null) { $top: $all; $right: $all; $bottom: $all; $left: $all; }
+  @if ($all != null) { $top: $all; $right: $all; $bottom: $all; $left: $all}
   border-radius: $top $right $bottom $left;
 }
 

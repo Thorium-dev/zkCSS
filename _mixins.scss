@@ -56,6 +56,23 @@
   ._text-center { text-align: center; }
   ._text-right { text-align: right; }
 
+  //Gestion des bordures
+  ._bd-none { border: none}
+  @for $i from 0 through $border-width{
+    ._bd-w-#{$i} {border-width: #{$i}px;}
+    ._bd-t-w-#{$i} {border-top-width: #{$i}px;}
+    ._bd-b-w-#{$i} {border-bottom-width: #{$i}px;}
+    ._bd-l-w-#{$i} {border-left-width: #{$i}px;}
+    ._bd-r-w-#{$i} {border-right-width: #{$i}px;}
+  }
+  @for $i from 0 through $border-radius{
+    ._bd-rad-#{$i} {border-radius: unquote("#{$i}%");}
+    ._bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%");}
+    ._bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%");}
+    ._bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
+    ._bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
+  }
+
   // Gestion des Margins et paddings
   @each $item in $margins-paddings {
     $px: px;
@@ -87,6 +104,11 @@
     ._bgc-#{$name} { background-color: #{$color}; }
     ._hover-color-#{$name}:hover { color: #{$color}; }
     ._hover-bgc-#{$name}:hover { background-color: #{$color}; }
+    ._bdc-#{$name} { border-color: #{$color}; }
+    ._bd-t-c-#{$name} { border-top-color: #{$color}; }
+    ._bd-l-c-#{$name} { border-left-color: #{$color}; }
+    ._bd-b-c-#{$name} { border-bottom-color: #{$color}; }
+    ._bd-r-c-#{$name} { border-right-color: #{$color};}
   }
 
 
@@ -129,6 +151,32 @@
       ._#{$breakpoint}-text-left { text-align: left; }
       ._#{$breakpoint}-text-center { text-align: center; }
       ._#{$breakpoint}-text-right { text-align: right; }
+
+      //Gestion des bordures
+      @for $i from 1 through length($colors-name) {
+        $name: nth($colors-name, $i);
+        $color: nth($colors, $i);
+        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}; }
+        ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}; }
+        ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}; }
+        ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}; }
+        ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}; }
+      }
+      ._#{$breakpoint}-bd-none {border: none;}
+      @for $i from 0 through $border-width{
+        ._#{$breakpoint}-bd-w-#{$i} {border-width: #{$i}px;}
+        ._#{$breakpoint}-bd-t-w-#{$i} {border-top-width: #{$i}px;}
+        ._#{$breakpoint}-bd-b-w-#{$i} {border-bottom-width: #{$i}px;}
+        ._#{$breakpoint}-bd-l-w-#{$i} {border-left-width: #{$i}px;}
+        ._#{$breakpoint}-bd-r-w-#{$i} {border-right-width: #{$i}px;}
+      }
+      @for $i from 0 through $border-radius{
+        ._#{$breakpoint}-bd-rad-#{$i} {border-radius: unquote("#{$i}%");}
+        ._#{$breakpoint}-bd-t-l-rad-#{$i} {border-top-left-radius: unquote("#{$i}%");}
+        ._#{$breakpoint}-bd-t-r-rad-#{$i} {border-top-right-radius: unquote("#{$i}%");}
+        ._#{$breakpoint}-bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
+        ._#{$breakpoint}-bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
+      }
 
       // Gestion des boxes
       ._container-flex {

@@ -56,6 +56,17 @@
   ._text-center { text-align: center; }
   ._text-right { text-align: right; }
 
+  //Gestion des positions
+  ._relative{ position: relative;}
+  ._absolute{ position: absolute;}
+  @for $i from 0 through $position-values{
+    ._top-#{$i} { top : #{$i}px;}
+    ._bottom-#{$i} { bottom : #{$i}px;}
+    ._right-#{$i} { right : #{$i}px;}
+    ._left-#{$i} { left : #{$i}px;}
+  }
+
+
   //Gestion des bordures
   ._bd-none { border: none}
   @for $i from 0 through $border-width{
@@ -181,6 +192,16 @@
         ._#{$breakpoint}-bd-b-r-rad-#{$i} {border-bottom-right-radius: unquote("#{$i}%");}
         ._#{$breakpoint}-bd-b-l-rad-#{$i} {border-bottom-left-radius: unquote("#{$i}%");}
       }
+      //Gestion des positions
+      ._#{$breakpoint}-relative{ position: relative;}
+      ._#{$breakpoint}-absolute{ position: absolute;}
+      @for $i from 0 through $position-values{
+        ._#{$breakpoint}-top-#{$i} { top : #{$i}px;}
+        ._#{$breakpoint}-bottom-#{$i} { bottom : #{$i}px;}
+        ._#{$breakpoint}-right-#{$i} { right : #{$i}px;}
+        ._#{$breakpoint}-left-#{$i} { left : #{$i}px;}
+      }
+
 
 
       // Gestion des boxes

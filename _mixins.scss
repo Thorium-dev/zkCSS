@@ -37,6 +37,7 @@
   ._wrap { flex-flow: row wrap}
   // Empêcher le retour à la ligne
   ._no-wrap { flex-flow: row nowrap}
+  ._nowrap { flex-flow: row nowrap}
 
   // Alignement vertical des enfants
   ._align-top { align-items: flex-start}
@@ -110,7 +111,7 @@
 
   // Gestion des font-size
   @for $i from 8 through $font-sizes {
-    ._f-s-#{$i} { font-size: #{$i}px}
+    ._fs-#{$i} { font-size: #{$i}px}
   }
 
   // Gestion des couleurs
@@ -124,12 +125,12 @@
     ._hover-color-#{$name}:hover { color: #{$color}}
     ._hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-    ._bd-c-#{$name} { border-color: #{$color}}
+    ._bdc-#{$name} { border-color: #{$color}}
     ._bd-t-c-#{$name} { border-top-color: #{$color}}
     ._bd-l-c-#{$name} { border-left-color: #{$color}}
     ._bd-b-c-#{$name} { border-bottom-color: #{$color}}
     ._bd-r-c-#{$name} { border-right-color: #{$color}}
-    ._f-c-#{$name} {color: #{$color}}
+    ._fc-#{$name} {color: #{$color}}
 
   }
 
@@ -144,6 +145,7 @@
       ._#{$breakpoint}-wrap { flex-flow: row wrap}
       // Empêcher le retour à la ligne
       ._#{$breakpoint}-no-wrap { flex-flow: row nowrap}
+      ._#{$breakpoint}-nowrap { flex-flow: row nowrap}
 
       // Alignement vertical des enfants
       ._#{$breakpoint}-align-top { align-self: flex-start}
@@ -186,12 +188,12 @@
         ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}}
         ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}}
+        ._#{$breakpoint}-bdc-#{$name} { border-color: #{$color}}
         ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}}
         ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}}
         ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}}
         ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}}
-        ._#{$breakpoint}-f-c-#{$name} {color: #{$color}}
+        ._#{$breakpoint}-fc-#{$name} {color: #{$color}}
 
       }
 
@@ -260,7 +262,7 @@
 
       // Gestion des font-size
       @for $i from 8 through $font-sizes {
-        ._#{$breakpoint}-f-s-#{$i} { font-size: #{$i}px}
+        ._#{$breakpoint}-fs-#{$i} { font-size: #{$i}px}
       }
 
     }

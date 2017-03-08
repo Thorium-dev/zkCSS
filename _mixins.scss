@@ -66,6 +66,9 @@
   // Gestion des positions
   ._relative{ position: relative}
   ._absolute{ position: absolute}
+  ._static{ position: static}
+  ._fixed{ position: fixed}
+
   @for $i from 0 through $position-values{
     $px: px; @if($i == 0){ $px: null}
     ._top-#{$i} { top : #{$i}#{$px}}
@@ -125,12 +128,19 @@
     ._hover-color-#{$name}:hover { color: #{$color}}
     ._hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-    ._bdc-#{$name} { border-color: #{$color}}
+    // pour les bordures
+    ._bd-c-#{$name} { border-color: #{$color}}
     ._bd-t-c-#{$name} { border-top-color: #{$color}}
     ._bd-l-c-#{$name} { border-left-color: #{$color}}
     ._bd-b-c-#{$name} { border-bottom-color: #{$color}}
     ._bd-r-c-#{$name} { border-right-color: #{$color}}
-    ._fc-#{$name} {color: #{$color}}
+    // pour les bordures sur un hover
+    ._hover-bd-c-#{$name}:hover { border-color: #{$color}}
+    ._hover-bd-t-c-#{$name}:hover { border-top-color: #{$color}}
+    ._hover-bd-l-c-#{$name}:hover { border-left-color: #{$color}}
+    ._hover-bd-b-c-#{$name}:hover { border-bottom-color: #{$color}}
+    ._hover-bd-r-c-#{$name}:hover { border-right-color: #{$color}}
+
 
   }
 
@@ -188,13 +198,12 @@
         ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}}
         ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-        ._#{$breakpoint}-bdc-#{$name} { border-color: #{$color}}
+        //couleurs pour les bordures en responsive
+        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}}
         ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}}
         ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}}
         ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}}
         ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}}
-        ._#{$breakpoint}-fc-#{$name} {color: #{$color}}
-
       }
 
       // Gestion des bordures
@@ -218,6 +227,8 @@
       // Gestion des positions
       ._#{$breakpoint}-relative{ position: relative}
       ._#{$breakpoint}-absolute{ position: absolute}
+      ._#{$breakpoint}-static{ position: static}
+      ._#{$breakpoint}-fixed{ position: fixed}
       @for $i from 0 through $position-values{
         ._#{$breakpoint}-top-#{$i} { top : #{$i}px}
         ._#{$breakpoint}-bottom-#{$i} { bottom : #{$i}px}

@@ -250,11 +250,94 @@
         <code>_{taille_ecran}-text-right</code> : Applique un <code>text-align: right;</code> en fonction de la taille de l'écran.
     </li>
 </ul>
+<h3>Classes pour les <code>position</code></h3>
+<ul>
+    <li><code>_relative</code>: Applique une position <code>relative</code> à l'élément.</li>
+    <li><code>_absolute</code>: Applique une position <code>absolute</code> à l'élément.</li>
+    <li><code>_static</code>: Applique une position <code>static</code> à l'élément.</li>
+    <li><code>_fixed</code>: Applique une position <code>fixed</code> à l'élément.</li>
+</ul>
 
+<ul>
+    <li><code>_{taille_ecran}-relative</code>: Applique une position <code>relative</code> à l'élément en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-bsolute</code>: Applique une position <code>absolute</code> à l'élément en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-static</code>: Applique une position <code>static</code> à l'élément en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-fixed</code>: Applique une position <code>fixed</code> à l'élément en fonction de la taille de l'écran.</li>
+</ul>
+<p>La classe pour les positions <code>top</code> <code>right</code> <code>bottom</code> <code>left</code> va utiliser la variable <code>$position-values</code> qui est définie en pixel </p>
+<ul>
+    <li><code>_top-{taille}</code>: Applique l'emplacement <code>top</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_bottom-{taille}</code>: Applique l'emplacement <code>bottom</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_left-{taille}</code>: Applique l'emplacement <code>left</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_right-{taille}</code>: Applique l'emplacement <code>right</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+</ul>
+<ul>
+    <li><code>_top-{taille}</code>: Applique l'emplacement <code>top</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_bottom-{taille}</code>: Applique l'emplacement <code>bottom</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_left-{taille}</code>: Applique l'emplacement <code>left</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+    <li><code>_right-{taille}</code>: Applique l'emplacement <code>right</code> avec une valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>100px</code>.</li>
+</ul>
 
+<h3>Classes pour les <code>border-width</code></h3>
+<p>La classe pour les <code>border-width</code> se base sur la variable <code>$border-width</code> qui contient la valeur maximale en pixels. </p>
+<ul>
+     <li><code>_bd-w-{taille}</code>: Applique un <code>border-width</code>. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>. </li>
+     <li><code>_bd-t-w-{taille}</code>: Applique un <code>border-top-width</code>. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>. </li>
+     <li><code>_bd-r-w-{taille}</code>: Applique un <code>border-right-width</code>. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>. </li>
+     <li><code>_bd-b-w-{taille}</code>: Applique un <code>border-bottom-width</code>. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>. </li>
+     <li><code>_bd-l-w-{taille}</code>: Applique un <code>border-left-width</code>. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>. </li>
 
+</ul>
+<p>Cette classe va utiliser les valeurs définies dans la variable <code>$breakpoint</code> pour la taille de l'écran et la variable <code>$border-width</code>.
+<ul>
+    <li><code>_{taille_ecran}-bd-w-{taille}</code>: Applique un <code>border-width</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>10px</code>.</li>
+    <li><code>_{taille_ecran}-bd-t-w-{taille}</code>: Applique un <code>border-top-width</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>10px</code></li>
+    <li><code>_{taille_ecran}-bd-r-w-{taille}</code>: Applique un <code>border-right-width</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>10px</code></li>
+    <li><code>_{taille_ecran}-bd-b-w-{taille}</code>: Applique un <code>border-bottom-width</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>10px</code></li>
+    <li><code>_{taille_ecran}-bd-l-w-{taille}</code>: Applique un <code>border-left-width</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>10px</code></li>
+</ul>
 
+<h3>Classes pour les <code>border-radius</code></h3>
 
+<p> La classe pour les <code>border-radius</code> se base sur la variable <code>$border-radius</code> qui contient la valeur maximale en %. 
+<ul>
+    <li><code>_bd-rad-{taille}</code>: Applique un <code>border-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_bd-t-l-rad-{taille}</code>: Applique un <code>border-top-left-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_bd-t-r-rad-{taille}</code>: Applique un <code>border-top-right-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_bd-b-l-rad-{taille}</code>: Applique un <code>border-bottom-left-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_bd-b-r-rad-{taille}</code>: Applique un <code>border-bottom-right-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+</ul>
+<p>Cette classe va utiliser les valeurs définies dans la variable <code>$breakpoint</code> pour la taille de l'écran et la variable <code>$border-radius</code>.
+<ul>
+    <li><code>_{taille_ecran}-bd-rad-{taille}</code>: Applique un <code>border-radius</code> avec la valeur en pixels. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_{taille_ecran}-bd-t-l-rad-{taille}</code>: Applique un <code>border-top-left-radius</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_{taille_ecran}-bd-t-r-rad-{taille}</code>: Applique un <code>border-top-right-radius</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_{taille_ecran}-bd-b-l-rad-{taille}</code>: Applique un <code>border-bottom-left-radius</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+    <li><code>_{taille_ecran}-bd-b-r-rad-{taille}</code>: Applique un <code>border-bottom-right-radius</code> en fonction de la taille de l'écran. Par défaut les valeurs vont de <code>0</code> à <code>50%</code>. </li>
+</ul>
+
+<h3>Classes pour les <code>border-color</code></h3>
+<p>Les classes pour les <code>border-color</code> se basent sur les variables <code>$colors-name</code> et <code>$colors</code>.</p>
+<ul>
+    <li><code>_bd-c-{nom_de_la_couleur}</code>: Applique un <code>border-color</code>.</li>
+    <li><code>_bd-t-c-{nom_de_la_couleur}</code>: Applique un <code>border-top-color</code>.</li>
+    <li><code>_bd-r-c-{nom_de_la_couleur}</code>: Applique un <code>border-right-color</code>.</li>
+    <li><code>_bd-b-c-{nom_de_la_couleur}</code>: Applique un <code>border-bottom-color</code>.</li>
+    <li><code>_bd-l-c-{nom_de_la_couleur}</code>: Applique un <code>border-left-color</code>.</li>
+    <li><code>_hover-bd-c-{nom_de_la_couleur}</code>: Applique un <code>border-color</code> sur un hover.</li>
+    <li><code>_hover-bd-t-c-{nom_de_la_couleur}</code>: Applique un <code>border-top-color</code> sur un hover.</li>
+    <li><code>_hover-bd-r-c-{nom_de_la_couleur}</code>: Applique un <code>border-right-color</code> sur un hover.</li>
+    <li><code>_hover-bd-b-c-{nom_de_la_couleur}</code>: Applique un <code>border-bottom-color</code> sur un hover.</li>
+    <li><code>_hover-bd-l-c-{nom_de_la_couleur}</code>: Applique un <code>border-left-color</code> sur un hover.</li>
+</ul>
+<p>Cette classe va utiliser les valeurs définies dans la variable <code>$breakpoint</code> pour la taille de l'écran ainsi que les variables <code>$colors-name</code> et <code>$colors</code>.
+<ul>
+    <li><code>_{taille_ecran}-bd-c-{nom_de_la_couleur}</code>: Applique un <code>border-color</code> en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-bd-t-c-{nom_de_la_couleur}</code>: Applique un <code>border-top-color</code> en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-bd-r-c-{nom_de_la_couleur}</code>: Applique un <code>border-right-color</code> en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-bd-b-c-{nom_de_la_couleur}</code>: Applique un <code>border-bottom-color</code> en fonction de la taille de l'écran.</li>
+    <li><code>_{taille_ecran}-bd-l-c-{nom_de_la_couleur}</code>: Applique un <code>border-left-color</code> en fonction de la taille de l'écran.</li>
+</ul>
 
 
 <h2>Mixins</h2>

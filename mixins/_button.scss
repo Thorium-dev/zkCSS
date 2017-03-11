@@ -1,0 +1,50 @@
+@mixin button (
+  $bgc: #6f5499
+){
+  ._button {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    border: none;
+    padding: 0.85em 1em;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    outline: 0;
+    text-decoration: none;
+    background-color: $bgc;
+    color: #B9C9D8;
+    &:hover {
+      color: #ffffff;
+      transition: all 0.25s;
+      background-color: lighten($bgc, 5%);
+    }
+    &._button-3d {
+      border-radius: 0;
+      transition: all 0.1s;
+      border-bottom: 5px solid darken($bgc, 10%);
+      text-shadow: 0px -2px darken($bgc, 10%);
+      &:active {
+        transform: translate(0px,5px);
+        border-bottom: 0;
+      }
+
+    }
+
+  }
+}
+
+@mixin button-color (
+  $bgc: #6f5499
+){
+  ._button {
+    background-color: $bgc;
+    &:hover {
+      background-color: lighten($bgc, 5%);
+    }
+    &._button-3d {
+      border-bottom: 5px solid darken($bgc, 10%);
+      text-shadow: 0px -2px darken($bgc, 10%);
+    }
+  }
+}

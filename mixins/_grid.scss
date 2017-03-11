@@ -1,5 +1,4 @@
 @mixin grid (
-  $breakpoints: $breakpoints
 ) {
   ._container-flex {
     width: 100%;
@@ -29,7 +28,7 @@
   @for $i from 1 to $columns{
     ._container-#{$i} {
       ._box{
-        width: unquote("100/#{$i}%");
+        width: 100% / $i;
       }
     }
   }
@@ -66,9 +65,6 @@
   // Gestion des positions
   ._relative{ position: relative}
   ._absolute{ position: absolute}
-  ._static{ position: static}
-  ._fixed{ position: fixed}
-
   @for $i from 0 through $position-values{
     $px: px; @if($i == 0){ $px: null}
     ._top-#{$i} { top : #{$i}#{$px}}
@@ -128,22 +124,14 @@
     ._hover-color-#{$name}:hover { color: #{$color}}
     ._hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-    // pour les bordures
-    ._bd-c-#{$name} { border-color: #{$color}}
+    ._bdc-#{$name} { border-color: #{$color}}
     ._bd-t-c-#{$name} { border-top-color: #{$color}}
     ._bd-l-c-#{$name} { border-left-color: #{$color}}
     ._bd-b-c-#{$name} { border-bottom-color: #{$color}}
     ._bd-r-c-#{$name} { border-right-color: #{$color}}
-    // pour les bordures sur un hover
-    ._hover-bd-c-#{$name}:hover { border-color: #{$color}}
-    ._hover-bd-t-c-#{$name}:hover { border-top-color: #{$color}}
-    ._hover-bd-l-c-#{$name}:hover { border-left-color: #{$color}}
-    ._hover-bd-b-c-#{$name}:hover { border-bottom-color: #{$color}}
-    ._hover-bd-r-c-#{$name}:hover { border-right-color: #{$color}}
-
+    ._fc-#{$name} {color: #{$color}}
 
   }
-
 
   // Responsive
   $count: length($breakpoints);
@@ -198,12 +186,13 @@
         ._#{$breakpoint}-hover-color-#{$name}:hover { color: #{$color}}
         ._#{$breakpoint}-hover-bgc-#{$name}:hover { background-color: #{$color}}
 
-        //couleurs pour les bordures en responsive
-        ._#{$breakpoint}-bd-c-#{$name} { border-color: #{$color}}
+        ._#{$breakpoint}-bdc-#{$name} { border-color: #{$color}}
         ._#{$breakpoint}-bd-t-c-#{$name} { border-top-color: #{$color}}
         ._#{$breakpoint}-bd-l-c-#{$name} { border-left-color: #{$color}}
         ._#{$breakpoint}-bd-b-c-#{$name} { border-bottom-color: #{$color}}
         ._#{$breakpoint}-bd-r-c-#{$name} { border-right-color: #{$color}}
+        ._#{$breakpoint}-fc-#{$name} {color: #{$color}}
+
       }
 
       // Gestion des bordures
@@ -227,8 +216,6 @@
       // Gestion des positions
       ._#{$breakpoint}-relative{ position: relative}
       ._#{$breakpoint}-absolute{ position: absolute}
-      ._#{$breakpoint}-static{ position: static}
-      ._#{$breakpoint}-fixed{ position: fixed}
       @for $i from 0 through $position-values{
         ._#{$breakpoint}-top-#{$i} { top : #{$i}px}
         ._#{$breakpoint}-bottom-#{$i} { bottom : #{$i}px}
@@ -266,7 +253,7 @@
       @for $i from 1 to $columns{
         ._#{$breakpoint}-container-#{$i} {
           ._box{
-            width: unquote("100/#{$i}%");
+            width: 100% / $i;
           }
         }
       }
@@ -290,80 +277,4 @@
     }
   }
 
-}
-
-@mixin arrow(
-  $size: 10px,
-  $color: #fff,
-  $position: "down"
-){
-  $deg: 45deg;
-  @if($position == "up"){ $deg: -135deg}
-  @if($position == "top"){ $deg: -135deg}
-  @if($position == "right"){ $deg: -45deg}
-  @if($position == "down"){ $deg: 45deg}
-  @if($position == "bottom"){ $deg: 45deg}
-  @if($position == "left"){ $deg: 135deg}
-  content: "";
-  width: $size;
-  height: $size;
-  border-bottom: 1px solid $color;
-  border-right: 1px solid $color;
-  transform: rotate($deg);
-}
-
-@mixin border-radius($top: 10px, $right: 10px, $bottom: 10px, $left: 10px, $all: null){
-  @if ($all != null) { $top: $all; $right: $all; $bottom: $all; $left: $all}
-  border-radius: $top $right $bottom $left;
-}
-
-@mixin button (
-  $bgc: #6f5499
-){
-  ._button {
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.25s;
-    border: none;
-    padding: 0.85em 1em;
-    font-size: 0.9rem;
-    border-radius: 5px;
-    outline: 0;
-    text-decoration: none;
-    background-color: $bgc;
-    color: #B9C9D8;
-    &:hover {
-      color: #ffffff;
-      transition: all 0.25s;
-      background-color: lighten($bgc, 5%);
-    }
-    &._button-3d {
-      border-radius: 0;
-      transition: all 0.1s;
-      border-bottom: 5px solid darken($bgc, 10%);
-      text-shadow: 0px -2px darken($bgc, 10%);
-      &:active {
-        transform: translate(0px,5px);
-        border-bottom: 0;
-      }
-
-    }
-
-  }
-}
-
-@mixin button-color (
-  $bgc: #6f5499
-){
-  ._button {
-    background-color: $bgc;
-    &:hover {
-      background-color: lighten($bgc, 5%);
-    }
-    &._button-3d {
-      border-bottom: 5px solid darken($bgc, 10%);
-      text-shadow: 0px -2px darken($bgc, 10%);
-    }
-  }
 }

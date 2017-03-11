@@ -1,4 +1,5 @@
 $gutter: 0%;
+// Max font-size value in pixel
 $font-sizes: 50;
 // Max width value in pixel
 $border-width: 10;
@@ -13,6 +14,34 @@ $breakpoints: 480 768 992 1200;
 
 $margins-paddings: 5 10 15 20 25 30 35 40 45 50 auto;
 
-$colors-name: purple-50 purple-100 purple-200 purple-300 purple-400 purple-500 purple-600 purple-700 purple-800 purple-900
-  purple-A100 purple-A200 purple-A400 purple-A700;
-$colors: #F3E5F5 #E1BEE7 #CE93D8 #BA68C8 #AB47BC #9C27B0 #8E24AA #7B1FA2 #6A1B9A #4A148C #EA80FC #E040FB #D500F9 #AA00FF;
+$colors-name: primary primary-hover success error error-hover input-bg input-error-bg text-color bd bg tooltip-bg checkbox-bd dark;
+$colors: #007063 #49B2A8 #33cc99 #993333 #cc6633 #F8FBFB #FFE5E5 #5D5D5D #95989A #F6F6F6 #425762 #4DB6AC #353534;
+
+$weeso-primary: #007063;
+$weeso-primary-hover: #49B2A8;
+$weeso-success: #33cc99;
+$weeso-error: #993333;
+$weeso-error-hover: #cc6633;
+$weeso-input-bgc: #F8FBFB;
+$weeso-input-error-bgc: #FFE5E5;
+$weeso-text-color: #5D5D5D;
+$weeso-bdc: #95989A;
+$weeso-bgc: #f6f6f6;
+$weeso-tooltip-bgc: #425762;
+$weeso-checkbox-bdc: #4DB6AC;
+
+$weeso-dashboard-color: #00796b;
+$weeso-user-color: #09aac7;
+$weeso-content-color: #e65100;
+$weeso-resources-color: #afb42b;
+$weeso-custom-color: #ba68c8;
+//$weeso-classification-color: #66cccc;
+$weeso-stats-color: #7986cb;
+$weeso-preferences-color: #7986cb;
+$weeso-advanced-color: #69f0ae;
+
+$weeso-dark-color: #353534;
+
+$weeso-input-search-bgc: #666666;
+$weeso-search-color: #999999;
+$weeso-loop-bgc: #191516;

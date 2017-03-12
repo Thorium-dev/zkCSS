@@ -56,6 +56,9 @@
   ._hide{ display: none}
   ._show-block{ display: block}
   ._show-inline{ display: inline}
+  ._display-block{ display: block}
+  ._display-none{ display: none}
+  ._display-inline{ display: inline}
 
   // Gestion du text-align
   ._text-left { text-align: left}
@@ -169,6 +172,9 @@
       ._#{$breakpoint}-hide{ display: none}
       ._#{$breakpoint}-show-block{ display: block}
       ._#{$breakpoint}-show-inline{ display: inline}
+      ._#{$breakpoint}-display-block{ display: block}
+      ._#{$breakpoint}-display-inline{ display: inline}
+      ._#{$breakpoint}-display-none{ display: none}
 
       // Gestion du text-align
       ._#{$breakpoint}-text-left { text-align: left}

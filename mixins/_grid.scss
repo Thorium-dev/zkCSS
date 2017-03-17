@@ -137,10 +137,11 @@
   }
 
   // Responsive
-  $count: length($breakpoints);
+  $count: length($breakpointsValue);
   @for $i from 1 through $count {
-    $breakpoint: nth($breakpoints, $count - $i + 1);
-    @media screen and (max-width: #{$breakpoint}px) {
+    $breakpoint: nth($breakpointsString, $count - $i + 1);
+    $breakpointValue: nth($breakpointsValue, $count - $i + 1);
+    @media screen and (max-width: #{$breakpointValue}px) {
 
       // Forcer le retour à la ligne
       ._#{$breakpoint}-wrap { flex-flow: row wrap}

@@ -10,7 +10,8 @@ $columns: 12;
 // Max position value in pixel
 $position-values: 100;
 // Breakpoints
-$breakpoints: 480 768 992 1200;
+$breakpoints-value: 480 768 992 1200;
+$breakpoints-name: xs sm md lg;
 
 $margins-paddings: 5 10 15 20 25 30 35 40 45 50 auto;
 

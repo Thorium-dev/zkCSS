@@ -137,10 +137,10 @@
   }
 
   // Responsive
-  $count: length($breakpoints);
-  @for $i from 1 through $count {
-    $breakpoint: nth($breakpoints, $count - $i + 1);
-    @media screen and (max-width: #{$breakpoint}px) {
+  @for $i from 1 through length($breakpoints-value) {
+    $breakpoint: nth($breakpoints-name, $i);
+    $breakpoint-value: nth($breakpoints-value, $i);
+    @media screen and (max-width: #{$breakpoint-value}px) {
 
       // Forcer le retour à la ligne
       ._#{$breakpoint}-wrap { flex-flow: row wrap}
@@ -274,7 +274,7 @@
   }
 
   // Denier élément + 1
-  $last: nth($breakpoints, length($breakpoints));
+  $last: nth($breakpoints-value, length($breakpoints-value));
   @media screen and (min-width: #{$last + 1}px) {
     ._container {
       width: 100%;

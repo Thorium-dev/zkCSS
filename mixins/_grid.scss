@@ -1,11 +1,11 @@
 @mixin grid (
 ) {
-  ._container-flex {
+  [class*='_container-'] {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    [class*='_box-']{
+    [class*='_box']{
       // Alignement vertical de chaque item
       &._align-top {
         align-self: flex-start;
@@ -32,6 +32,14 @@
       }
     }
   }
+
+  // Box columns order
+  @for $i from 0 to $order{
+    ._order-#{$i} {
+      order: $i;
+    }
+  }
+
   // Forcer le retour à la ligne
   ._wrap { flex-flow: row wrap}
   // Empêcher le retour à la ligne
@@ -54,6 +62,7 @@
 
   // Gestion du display
   ._hide{ display: none}
+  ._show{ display: block}
   ._show-block{ display: block}
   ._show-inline{ display: inline}
   ._display-block{ display: block}
@@ -137,9 +146,11 @@
   }
 
   // Responsive
-  @for $i from 1 through length($breakpoints-value) {
-    $breakpoint: nth($breakpoints-name, $i);
-    $breakpoint-value: nth($breakpoints-value, $i);
+  $count: length($breakpoints-value);
+  @for $i from 1 through  $count{
+    $index: $count - ($i - 1);
+    $breakpoint: nth($breakpoints-name, $index);
+    $breakpoint-value: nth($breakpoints-value, $index);
     @media screen and (max-width: #{$breakpoint-value}px) {
 
       // Forcer le retour à la ligne
@@ -170,6 +181,7 @@
 
       // Gestion du display
       ._#{$breakpoint}-hide{ display: none}
+      ._#{$breakpoint}-show{ display: block}
       ._#{$breakpoint}-show-block{ display: block}
       ._#{$breakpoint}-show-inline{ display: inline}
       ._#{$breakpoint}-display-block{ display: block}
@@ -261,6 +273,13 @@
           ._box{
             width: 100% / $i;
           }
+        }
+      }
+
+      // Box columns order
+      @for $i from 0 to $order{
+        ._#{$breakpoint}-order-#{$i} {
+          order: $i;
         }
       }
 

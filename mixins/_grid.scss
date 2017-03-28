@@ -1,3 +1,8 @@
+* {
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+}
+
 @mixin grid (
 ) {
   [class*='_container-'] {
@@ -66,6 +71,9 @@
   ._show-block{ display: block}
   ._show-inline{ display: inline}
   ._display-block{ display: block}
+  ._block{ display: block}
+  ._inline{ display: inline}
+  ._inline-block{ display: inline-block}
   ._display-none{ display: none}
   ._display-inline{ display: inline}
 
@@ -183,6 +191,9 @@
       ._#{$breakpoint}-hide{ display: none}
       ._#{$breakpoint}-show{ display: block}
       ._#{$breakpoint}-show-block{ display: block}
+      ._#{$breakpoint}-block{ display: block}
+      ._#{$breakpoint}-inline{ display: inline}
+      ._#{$breakpoint}-inline-block{ display: inline-block}
       ._#{$breakpoint}-show-inline{ display: inline}
       ._#{$breakpoint}-display-block{ display: block}
       ._#{$breakpoint}-display-inline{ display: inline}

@@ -2,12 +2,7 @@
 @import 'normalize-version';
 @import 'normalize/typography';
 @import "variables";
-@import "mixins/grid";
-@import "mixins/button";
-@import "mixins/others";
+@import "zk";
 
-
-@include button();
-@include grid();
 
 // @Todo : Make documentation for _container-{number} with _box => ._#{$breakpoint}-container-#{$i} {
